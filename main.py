@@ -20,6 +20,8 @@ def get_stock_name_map():
 
 
 def get_token() -> str:
+    print("✅ APP_KEY:", APP_KEY)
+    print("✅ SECRET_KEY:", SECRET_KEY)
     url = "https://api.kiwoom.com/oauth2/token"
     payload = {
         "grant_type": "client_credentials",
