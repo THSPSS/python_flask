@@ -27,6 +27,7 @@ def get_token() -> str:
         "secretkey": SECRET_KEY
     }
     r = requests.post(url, json=payload, timeout=10)
+    print("🔍 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
     r.raise_for_status()
     return r.json()["token"]
 
