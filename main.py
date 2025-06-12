@@ -143,5 +143,6 @@ def scan():
     return pd.DataFrame(results)
 
 if __name__ == "__main__":
+    print("SCAN ON")
     df = scan()
     print(df)
