@@ -20,8 +20,6 @@ def get_stock_name_map():
 
 
 def get_token() -> str:
-    print("✅ APP_KEY:", APP_KEY)
-    print("✅ SECRET_KEY:", SECRET_KEY)
     url = "https://api.kiwoom.com/oauth2/token"
     payload = {
         "grant_type": "client_credentials",
@@ -82,6 +80,8 @@ EXCLUDE = ['ETN','KODEX','TIGER','KBSTAR','KOSEF','HANARO','ARIRANG',
            '우B','우C','우선주','KOACT']
 
 def scan():
+    print("✅ APP_KEY:", APP_KEY)
+    print("✅ SECRET_KEY:", SECRET_KEY)
     token  = get_token()
     codes  = get_stock_universe()
     today  = datetime.now().strftime("%Y%m%d")
@@ -143,6 +143,5 @@ def scan():
     return pd.DataFrame(results)
 
 if __name__ == "__main__":
-    print("SCAN ON")
     df = scan()
     print(df)

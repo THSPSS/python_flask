@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 @app.route("/rsi-scan", methods=["GET"])
 def run_scan():
+    print("SCAN ON")
     df = scan()
 
     if df.empty:
