@@ -22,6 +22,10 @@ def send_to_telegram(chat_id: str, message: str):
     return response.json()
 
 
+@app.route("/")
+def home():
+    return "✅ Flask server is running!"
+
 @app.route("/rsi-scan", methods=["GET"])
 def run_scan():
     chat_id = request.args.get("chat_id")  # e.g., ?chat_id=12345678
