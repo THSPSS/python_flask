@@ -16,7 +16,7 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     message = (
-        "📊 <b>주식 검색 도우미</b>\n\n"
+        "📊 주식 검색 \n\n"
         "아래에서 원하시는 검색 유형을 선택해주세요:"
     )
 
