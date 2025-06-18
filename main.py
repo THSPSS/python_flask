@@ -12,8 +12,8 @@ from kiwoom_auth import get_token
 def get_stock_name_map():
     url = "https://kind.krx.co.kr/corpgeneral/corpList.do?method=download"
     df = pd.read_html(url, encoding="euc-kr")[0]
-    df = df[['종목코드', '회사명']]
-    df['종목코드'] = df['종목코드'].apply(lambda x: f"{x:06d}")  # 6자리 코드로 맞추기
+    df = df[['종목코드', '회사명']].copy()
+    df.loc[:, '종목코드'] = df['종목코드'].apply(lambda x: f"{x:06d}")
     return dict(zip(df['종목코드'], df['회사명']))
 
 
@@ -27,7 +27,8 @@ def get_stock_universe() -> list[str]:
     """
     url = "https://kind.krx.co.kr/corpgeneral/corpList.do?method=download"  # KRX 상장법인목록
     df  = pd.read_html(url, encoding="euc-kr")[0]
-    df["종목코드"] = df["종목코드"].astype(str).str.zfill(6)
+    df = df.copy()  # avoid chained assignment warning
+    df.loc[:, '종목코드'] = df['종목코드'].apply(lambda x: f"{x:06d}")
     return df["종목코드"].tolist()
 
 def fetch_daily_chart(token:str, code:str, base_date:str):
