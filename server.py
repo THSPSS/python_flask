@@ -7,6 +7,7 @@ from main import scan
 from threading import Thread
 
 load_dotenv()
+
 app = Flask(__name__)
 
 weekday_map = ['월', '화', '수', '목', '금', '토', '일']

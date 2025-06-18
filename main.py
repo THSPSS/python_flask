@@ -4,8 +4,9 @@ desc   : RSI 20-day bottom-breakout scanner (Kiwoom REST)
 env    : Python 3.10+, requests, pandas, numpy
 """
 import  time, requests, pandas as pd, numpy as np
-from datetime import datetime, timedelta
+from datetime import datetime
 from kiwoom_auth import get_token
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
 # ───────────────────────── 유틸 함수 ────────────────────────────
@@ -127,6 +128,18 @@ def scan():
             time.sleep(0.7)
 
     return pd.DataFrame(results)
+
+# Simulate parallel scan
+def parallel_scan(token, codes, base_date):
+    results = []
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        futures = [executor.submit(fetch_daily_chart, token, code, base_date) for code in codes]
+        for future in as_completed(futures):
+            res = future.result()
+            if res:
+                results.append(res)
+    return pd.DataFrame(results)
+
 
 if __name__ == "__main__":
     df = scan()

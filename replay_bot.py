@@ -15,7 +15,12 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    await update.message.reply_text("원하시는 검색을 선택하세요:", reply_markup=reply_markup)
+    message = (
+        "📊 <b>주식 검색 도우미</b>\n\n"
+        "아래에서 원하시는 검색 유형을 선택해주세요:"
+    )
+
+    await update.message.reply_text(message, reply_markup=reply_markup)
 
 # Respond to button presses
 async def handle_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
