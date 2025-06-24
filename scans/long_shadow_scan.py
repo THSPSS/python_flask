@@ -13,6 +13,8 @@ def long_shadow_strategy(df, name, code):
     low = int(today['low_pric'])
     volume = int(today['trde_qty'])
 
+    print(name)
+
     #필터 1000원 이하
     if not is_above_min_price(close_p):
         return None

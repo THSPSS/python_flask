@@ -18,7 +18,7 @@ def search():
     if not chat_id or not code:
         return jsonify({"error": "chat_id와 code 파라미터가 필요합니다."}), 400
 
-    Thread(target=background_search_and_notify, args=(code, chat_id)).start()
+    Thread(target=background_search_and_notify, args=(chat_id, code)).start()
     return jsonify({"message": "🔍 검색을 시작했습니다. 결과는 텔레그램으로 전송됩니다."})
 
 

@@ -17,7 +17,18 @@ def send_to_telegram(recipient_id: str, message: str):
         "text": message
     }
     response = requests.post(url, data=payload)
-    response.raise_for_status()
+    # ➕ 디버깅 로그 추가
+    print(f"📤 텔레그램 전송 시도: chat_id={recipient_id}")
+    print(f"📨 메시지 길이: {len(message)}")
+    print(f"📨 메시지 미리보기: {message[:100]}")
+
+    try:
+        response.raise_for_status()
+    except requests.exceptions.HTTPError as e:
+        print(f"❌ 텔레그램 전송 실패: {e}")
+        print(f"🔍 응답 내용: {response.text}")
+        raise e
+
     return response.json()
 
 
