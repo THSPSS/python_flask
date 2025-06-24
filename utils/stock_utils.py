@@ -12,7 +12,7 @@ SECRET_KEY = os.getenv("KIWOOM_SECRET_KEY")
 EXCLUDE_KEYWORDS = [
     'ETN','KODEX','TIGER','KBSTAR','KOSEF','HANARO','ARIRANG',
     'FOCUS','스팩','SOL','RISE','BNK','우','1우','2우','3우',
-    '우B','우C','우선주','KOACT'
+    '우B','우C','우선주','KOACT',"KIWOOM","지주","ACE", "PLUS","50","200"
 ]
 
 RSI_PERIOD = 14 #RSI 검색을 위한 일수
