@@ -4,7 +4,7 @@ import requests
 
 from scans.long_shadow_scan import long_lower_shadow_scan, format_shadow_message
 from scans.rsi_scan import rsi_scan, format_rsi_message
-from scans.new_high_scan import new_high_scan , format_new_high_message
+from scans.new_high_scan import run_new_high_scan , format_new_high_message
 
 load_dotenv()
 
@@ -29,7 +29,7 @@ def background_search_and_notify(chat_id: str, code: str):
         df = long_lower_shadow_scan()
         message = format_shadow_message(df)
     elif code == '3' :
-        df = new_high_scan()
+        df = run_new_high_scan()
         message = format_new_high_message(df)
     else:
         message = "❌ 지원하지 않는 코드입니다."

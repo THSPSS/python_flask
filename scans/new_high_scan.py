@@ -1,8 +1,7 @@
 import requests
 from scans.base_scanner import run_scan
-from utils.data_loader import load_market_data
 from utils.filters import is_above_min_price
-from utils.stock_utils import is_valid_stock, is_52week_high
+from utils.stock_utils import is_valid_stock, is_52week_high , get_token
 from datetime import datetime
 import pandas as pd
 
@@ -66,7 +65,7 @@ def get_new_high_list(token: str) -> pd.DataFrame:
         return pd.DataFrame()
 
 def run_new_high_scan():
-    token, _, _ = load_market_data()  # 이미 토큰은 발급 받으셨을 테니 재사용
+    token = get_token()# 토큰만 발급
     df = get_new_high_list(token)
 
     if df.empty:
