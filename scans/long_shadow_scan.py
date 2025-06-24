@@ -52,7 +52,7 @@ def format_shadow_message(df: pd.DataFrame) -> str:
     now = datetime.now()
     now_time_format = now.strftime("%y-%m-%d") + f"({['월','화','수','목','금','토','일'][now.weekday()]})"
 
-    message = f"📊 {now_time_format} 아래꼬리 종목 알림\n\n" + "\n\n".join([
+    message = f"📊 {now_time_format} 아래꼬리 종목 알림\n\n".join([
         f"🔹 {row['종목명']} ({row['종목코드']})\n💧 종가: {row['종가']}원\n꼬리비율: {round(row['아래꼬리비율']*100, 2)}%"
         for _, row in df.iterrows()
     ])
