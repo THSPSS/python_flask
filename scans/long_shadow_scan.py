@@ -28,7 +28,7 @@ def long_shadow_strategy(df, name, code):
     body_ratio = body / open_p
     shadow_ratio = lower_shadow / low
 
-    if body == 0 or shadow_ratio < 0.05 < body_ratio or lower_shadow < body * 3:
+    if body == 0 or shadow_ratio < 0.05 or body_ratio > 0.05 or lower_shadow < body * 3:
         return None
 
     return {
@@ -52,8 +52,9 @@ def format_shadow_message(df: pd.DataFrame) -> str:
     now = datetime.now()
     now_time_format = now.strftime("%y-%m-%d") + f"({['월','화','수','목','금','토','일'][now.weekday()]})"
 
-    message = f"📊 {now_time_format} 아래꼬리 종목 알림\n\n".join([
-        f"🔹 {row['종목명']} ({row['종목코드']})\n💧 종가: {row['종가']}원\n꼬리비율: {round(row['아래꼬리비율']*100, 2)}%"
+    message = "📊 {} 아래꼬리 종목 알림\n\n".format(now_time_format)
+    message += "\n\n".join([
+        f"🔹 {row['종목명']} ({row['종목코드']})\n💧 종가: {row['종가']}원\n꼬리비율: {round(row['아래꼬리비율'] * 100, 2)}%"
         for _, row in df.iterrows()
     ])
     return message

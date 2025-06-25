@@ -38,6 +38,7 @@ def send_to_telegram(recipient_id: str, message: str):
 
     print(f"📤 텔레그램 전송 시도: chat_id={recipient_id}")
     print(f"📨 전체 메시지 길이: {len(message)}")
+    print(f"📦 메시지 내용:\n{message}")  # ✅ 전체 메시지 출력
 
     # ✅ 4000자 이하일 경우 한 번에 전송
     if len(message) <= MAX_LENGTH:
@@ -58,6 +59,7 @@ def send_to_telegram(recipient_id: str, message: str):
         _send_chunk(url, recipient_id, chunk.strip())
 
 def _send_chunk(url, recipient_id, text):
+    print(f"전송 메시지 확인 : {text}")
     print(f"📨 전송 중... 길이: {len(text)}")
     payload = {
         "chat_id": recipient_id,
