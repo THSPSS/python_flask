@@ -7,7 +7,6 @@ from scans.base_scanner import run_scan
 from datetime import datetime
 
 
-
 RSI_PERIOD = 14
 RISE_THRESHOLD = 3
 

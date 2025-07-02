@@ -9,6 +9,7 @@ from scans.new_high_scan import run_new_high_scan , format_new_high_message
 load_dotenv()
 
 TOKEN = os.getenv("TOKEN")
+TEAM_BOTS = os.getenv("TEAM_BOTS")
 
 # def send_to_telegram(recipient_id: str, message: str):
 #     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"

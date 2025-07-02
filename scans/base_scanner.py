@@ -1,8 +1,6 @@
 # scans/base_scanner.py
-
 from utils.data_loader import load_market_data
 from utils.stock_utils import is_valid_stock, fetch_daily_chart
-from utils.filters import is_above_min_price
 from datetime import datetime
 import time
 import pandas as pd
