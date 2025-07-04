@@ -19,4 +19,3 @@ from scans.new_high_scan import run_new_high_scan
 df = run_new_high_scan()
 df_clean = df[df["stk_nm"].apply(is_valid_stock)]
 print(df_clean)
-

@@ -8,7 +8,6 @@ def load_stock_data():
     url = "https://kind.krx.co.kr/corpgeneral/corpList.do?method=download"
     df = pd.read_html(url, encoding="euc-kr")[0]
     df = df[['종목코드', '회사명']].copy()
-    df['종목코드'] = df['종목코드'].apply(format_code)
     return df
 
 #종목 코드와 회사명
@@ -22,10 +21,3 @@ def get_stock_universe():
     """종목코드 리스트 반환"""
     df = load_stock_data()
     return df['종목코드'].tolist()
-
-
-def format_code(x):
-    try:
-        return f"{int(x):06d}"
-    except ValueError:
-        return str(x).strip()
