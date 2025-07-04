@@ -12,7 +12,8 @@ SECRET_KEY = os.getenv("KIWOOM_SECRET_KEY")
 EXCLUDE_KEYWORDS = [
     'ETN','KODEX','TIGER','KBSTAR','KOSEF','HANARO','ARIRANG',
     'FOCUS','스팩','SOL','RISE','BNK','우','1우','2우','3우',
-    '우B','우C','우선주','KOACT',"KIWOOM","지주","ACE", "PLUS","50","200"
+    '우B','우C','우선주','KOACT',"KIWOOM","지주","ACE", "PLUS","50","200",
+    "액티브"
 ]
 
 RSI_PERIOD = 14 #RSI 검색을 위한 일수
@@ -32,21 +33,6 @@ def get_token() -> str:
     print("🔍 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
     r.raise_for_status()
     return r.json()["token"]
-
-#종목 코드와 회사명
-def get_stock_name_map():
-    url = "https://kind.krx.co.kr/corpgeneral/corpList.do?method=download"
-    df = pd.read_html(url, encoding="euc-kr")[0]
-    df = df[['종목코드', '회사명']].copy()
-    df['종목코드'] = df['종목코드'].apply(lambda x: f"{x:06d}")
-    return dict(zip(df['종목코드'], df['회사명']))
-
-#종목 코드 리스트화
-def get_stock_universe():
-    url = "https://kind.krx.co.kr/corpgeneral/corpList.do?method=download"
-    df = pd.read_html(url, encoding="euc-kr")[0]
-    df['종목코드'] = df['종목코드'].apply(lambda x: f"{x:06d}")
-    return df['종목코드'].tolist()
 
 
 #리츠, ETF , ETN 등등 빼기
@@ -88,3 +74,4 @@ def calc_rsi(prices, period=RSI_PERIOD):
 #52주 신고가 확인
 def is_52week_high(closes: list[int], today_close: int) -> bool:
     return today_close >= max(closes)
+

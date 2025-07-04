@@ -6,14 +6,13 @@ import time
 import pandas as pd
 
 def run_scan(strategy_func):
-    token, codes, names = load_market_data()
+    token, codes, name_map = load_market_data()
     today = datetime.now().strftime("%Y%m%d")
-    print(f"today {today}")
     results = []
 
     for idx, code in enumerate(codes, 1):
         try:
-            name = names.get(code, "")
+            name = name_map.get(code, "")
             if not is_valid_stock(name):
                 continue
 
