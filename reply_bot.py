@@ -81,7 +81,7 @@ async def handle_callback_query(update: Update, context: ContextTypes.DEFAULT_TY
     if user_states.get(user_id) == 'waiting_for_selection':
         await handle_search_selection(query, user_id, data)
     else:
-        await query.edit_message_text("세션이 만료되었습니다. /start를 다시 입력해주세요.")
+        await query.edit_message_text("세션이 만료되었습니다. /start 를 다시 입력해주세요.")
 
 
 # 검색 선택 처리
