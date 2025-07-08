@@ -4,7 +4,6 @@ from concurrent.futures import ThreadPoolExecutor , as_completed
 from utils.data_loader import load_market_data
 from utils.stock_utils import is_valid_stock, fetch_daily_chart
 from datetime import datetime
-import time
 import pandas as pd
 
 def run_scan(strategy_func):

@@ -93,4 +93,3 @@ def calc_rsi(prices, period=RSI_PERIOD):
 #52주 신고가 확인
 def is_52week_high(closes: list[int], today_close: int) -> bool:
     return today_close >= max(closes)
-
