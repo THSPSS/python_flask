@@ -27,13 +27,13 @@ def search():
     refresh_cache_if_needed()
 
     chat_id = request.args.get("chat_id")
-    code = request.args.get("code")  # "1", "2", etc.
+    code = request.args.get("code")  # "1", "2",
     token = request.args.get("token") or TOKEN
 
     if not chat_id or not code or not token:
         return jsonify({"error": "필수 파라미터 chat_id , code , token 부족"}), 400
 
-    # ✅ 숫자인 경우 +1 처리
+    # ✅ 리서치 인덱스에서 찾은 코드로 전송 (숫자인 경우 -1 처리)
     if code.isdigit():
         idx = int(code) - 1
         if 0 <= idx < len(RESEARCHES):

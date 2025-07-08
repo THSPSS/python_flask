@@ -11,7 +11,7 @@ def long_shadow_strategy(df, name, code):
     open_p = int(today['open_pric'])
     close_p = int(today['cur_prc'])
     low = int(today['low_pric'])
-    high = int(today['high_pric'])
+    # high = int(today['high_pric'])
     volume = int(today['trde_qty'])
 
     print(name)
@@ -28,9 +28,10 @@ def long_shadow_strategy(df, name, code):
     lower_shadow = min(open_p, close_p) - low
     body_ratio = body / open_p
     shadow_ratio = lower_shadow / low
-    is_higher_shadow_exist = high > max(open_p, close_p)
+    #위에 꼬리는 현재로선 필요 X
+    # is_higher_shadow_exist = high > max(open_p, close_p)
 
-    if body == 0 or shadow_ratio < 0.05 or body_ratio > 0.05 or lower_shadow < body * 3 or is_higher_shadow_exist:
+    if body == 0 or shadow_ratio < 0.05 or body_ratio > 0.05 or lower_shadow < body * 3:
         return None
 
     return {

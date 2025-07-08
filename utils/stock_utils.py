@@ -1,3 +1,5 @@
+import time
+
 import pandas as pd, numpy as np
 from dotenv import load_dotenv
 import requests
@@ -41,7 +43,8 @@ def is_valid_stock(name):
 
 
 #일봉 차트 데이터 가져오기
-def fetch_daily_chart(token, code, base_date):
+
+def fetch_daily_chart(token, code, base_date, retries=3, delay=0.5):
     url = "https://api.kiwoom.com/api/dostk/chart"
     headers = {
         "Content-Type": "application/json;charset=UTF-8",
@@ -55,10 +58,26 @@ def fetch_daily_chart(token, code, base_date):
         "base_dt": base_date,
         "upd_stkpc_tp": "1"
     }
-    r = requests.post(url, headers=headers, json=body, timeout=10)
-    r.raise_for_status()
-    data = r.json().get("stk_dt_pole_chart_qry", [])
-    return pd.DataFrame(data)
+
+    for attempt in range(1, retries + 1):
+        try:
+            response = requests.post(url, headers=headers, json=body, timeout=10)
+            if response.status_code == 429:
+                wait_time = delay * attempt
+                print(f"⏳ 요청 제한 (429) - {code} → {wait_time:.1f}s 후 재시도 ({attempt}/{retries})")
+                time.sleep(wait_time)
+                continue
+
+            response.raise_for_status()
+            data = response.json().get("stk_dt_pole_chart_qry", [])
+            return pd.DataFrame(data)
+
+        except requests.exceptions.RequestException as e:
+            print(f"⚠️ 요청 실패 ({code}) → {e}")
+            time.sleep(delay * attempt)
+
+    print(f"❌ {code} 최종 요청 실패 (재시도 {retries}회)")
+    return pd.DataFrame()
 
 #RSI 계산
 def calc_rsi(prices, period=RSI_PERIOD):

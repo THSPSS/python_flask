@@ -1,4 +1,6 @@
 # scans/base_scanner.py
+from concurrent.futures import ThreadPoolExecutor , as_completed
+
 from utils.data_loader import load_market_data
 from utils.stock_utils import is_valid_stock, fetch_daily_chart
 from datetime import datetime
@@ -10,25 +12,29 @@ def run_scan(strategy_func):
     today = datetime.now().strftime("%Y%m%d")
     results = []
 
-    for idx, code in enumerate(codes, 1):
+
+    def process_code(code):
         try:
             name = name_map.get(code, "")
             if not is_valid_stock(name):
-                continue
+                return None
 
             df = fetch_daily_chart(token, code, today)
             if df.empty:
-                continue
+                return None
 
             result = strategy_func(df, name, code)
-            if result:
-                results.append(result)
-
+            return result
         except Exception as e:
             print(f"⚠️ {code} 분석 중 오류: {e}")
-            time.sleep(0.2)
+            return None
 
-        if idx % 50 == 0:
-            time.sleep(0.7)
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        futures = [executor.submit(process_code, code) for code in codes]
+
+        for idx, future in enumerate(as_completed(futures), 1):
+            result = future.result()
+            if result:
+                results.append(result)
 
     return pd.DataFrame(results)
