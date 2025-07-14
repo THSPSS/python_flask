@@ -1,27 +1,20 @@
 import time
+from datetime import datetime
 
 import pandas as pd, numpy as np
 from dotenv import load_dotenv
 import requests
 import os
 
+from core.settings import *
 
 load_dotenv()
 
 APP_KEY    = os.getenv("KIWOOM_APP_KEY")
 SECRET_KEY = os.getenv("KIWOOM_SECRET_KEY")
 
-EXCLUDE_KEYWORDS = [
-    'ETN','KODEX','TIGER','KBSTAR','KOSEF','HANARO','ARIRANG',
-    'FOCUS','스팩','SOL','RISE','BNK','우','1우','2우','3우',
-    '우B','우C','우선주','KOACT',"KIWOOM","지주","ACE", "PLUS","50","200",
-    "액티브"
-]
-
-RSI_PERIOD = 14 #RSI 검색을 위한 일수
-MIN_CANDLE_COUNT = 23 #최소 종가 count
-RISE_THRESHOLD = 3  # 어제 대비 오늘 증가 %
-
+# 미국-필터 조건
+EXCLUDE_SUFFIXES = {'W', 'R', 'P', 'Q'}
 
 #토큰 가져오기
 def get_token() -> str:
@@ -44,7 +37,7 @@ def is_valid_stock(name):
 
 #일봉 차트 데이터 가져오기
 
-def fetch_daily_chart(token, code, base_date, retries=3, delay=0.5):
+def fetch_daily_chart(token, code, base_date, retries=5, delay=0.5):
     url = "https://api.kiwoom.com/api/dostk/chart"
     headers = {
         "Content-Type": "application/json;charset=UTF-8",
@@ -68,13 +61,24 @@ def fetch_daily_chart(token, code, base_date, retries=3, delay=0.5):
                 time.sleep(wait_time)
                 continue
 
+            elif response.status_code >= 500:
+                wait_time = delay * attempt + 1.0
+                print(f"⛔ 서버 오류 ({response.status_code}) - {code} → {wait_time:.1f}s 후 재시도 ({attempt}/{retries})")
+                time.sleep(wait_time)
+                continue
+
             response.raise_for_status()
             data = response.json().get("stk_dt_pole_chart_qry", [])
+            if not data:
+                print(f"⚠️ {code} 데이터 없음 또는 응답 비어 있음")
+                return pd.DataFrame()
+
             return pd.DataFrame(data)
 
         except requests.exceptions.RequestException as e:
-            print(f"⚠️ 요청 실패 ({code}) → {e}")
-            time.sleep(delay * attempt)
+            wait_time = delay * attempt
+            print(f"⚠️ 요청 실패 ({code}) → {e} → {wait_time:.1f}s 후 재시도")
+            time.sleep(wait_time)
 
     print(f"❌ {code} 최종 요청 실패 (재시도 {retries}회)")
     return pd.DataFrame()
@@ -93,3 +97,20 @@ def calc_rsi(prices, period=RSI_PERIOD):
 #52주 신고가 확인
 def is_52week_high(closes: list[int], today_close: int) -> bool:
     return today_close >= max(closes)
+
+#연도 - 월 - 일 (요일)
+def get_korean_date_str():
+    now = datetime.now()
+    return now.strftime("%y-%m-%d") + f" ({WEEKDAY_MAP[now.weekday()]})"
+
+def us_is_stock_today(file_path):
+    """파일이 오늘 수정된 파일인지 확인"""
+    if not os.path.exists(file_path):
+        return False
+    return datetime.fromtimestamp(os.path.getmtime(file_path)).date() == datetime.today().date()
+
+def us_is_valid_symbol(symbol):
+    return isinstance(symbol, str) and not (len(symbol) > 4 and symbol[-1].upper() in EXCLUDE_SUFFIXES)
+
+def us_is_common_stock(name):
+    return isinstance(name, str) and name.strip().endswith("- Common Stock")

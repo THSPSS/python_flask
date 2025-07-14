@@ -1,7 +1,13 @@
 import requests
-from scans.long_shadow_scan import long_lower_shadow_scan, format_shadow_message
-from scans.rsi_scan import rsi_scan, format_rsi_message
-from scans.new_high_scan import run_new_high_scan , format_new_high_message
+
+from core.settings import MAX_LENGTH
+from scan.kr.long_shadow_scan import long_lower_shadow_scan, format_shadow_message
+from scan.kr.rsi_scan import rsi_scan, format_rsi_message
+from scan.kr.new_high_scan import run_new_high_scan , format_new_high_message
+from scan.us.long_lower_shadow import *
+from scan.us.new_high_scan import *
+from scan.us.rsi_scan import *
+
 
 # def send_to_telegram(recipient_id: str, message: str):
 #     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
@@ -24,7 +30,7 @@ from scans.new_high_scan import run_new_high_scan , format_new_high_message
 #
 #     return response.json()
 
-MAX_LENGTH = 4000
+
 
 
 def send_to_telegram(token: str,recipient_id: str, message: str):
@@ -69,16 +75,31 @@ def _send_chunk(token, recipient_id, text):
         print(f"❌ 예외 발생: {e}")
 
 def background_search_and_notify(token: str ,chat_id: str, code: str):
-    if code == "rsi":
-        df = rsi_scan()
-        message = format_rsi_message(df)
-    elif code == "long-lower-shadow":
-        df = long_lower_shadow_scan()
-        message = format_shadow_message(df)
-    elif code == "52weeks" :
-        df = run_new_high_scan()
-        message = format_new_high_message(df)
+    print(f"🛰️ 실행 요청: {code} → chat_id: {chat_id}")
+    if code.startswith("us-"):
+        us_code = code.replace("us-", "")
+        if us_code == "rsi":
+            df = us_rsi_scan()
+            message = format_us_rsi_summary(df)
+        elif us_code == "long-lower-shadow":
+            df = us_long_lower_shadow_scan()
+            message = format_us_long_shadow(df)
+        elif us_code == "52weeks":
+            df = us_new_high_scan()
+            message = format_us_52week_high(df)
+        else:
+            message = f"❌ 지원하지 않는 미국 코드입니다: {us_code}"
     else:
-        message = "❌ 지원하지 않는 코드입니다."
+        if code == "rsi":
+            df = rsi_scan()
+            message = format_rsi_message(df)
+        elif code == "long-lower-shadow":
+            df = long_lower_shadow_scan()
+            message = format_shadow_message(df)
+        elif code == "52weeks":
+            df = run_new_high_scan()
+            message = format_new_high_message(df)
+        else:
+            message = f"❌ 지원하지 않는 한국 코드입니다: {code}"
 
     send_to_telegram(token , chat_id , message)

@@ -3,6 +3,8 @@ from utils.cache_utils import refresh_cache_if_needed
 from dotenv import load_dotenv
 from flask import Flask, jsonify , request
 from threading import Thread
+
+from utils.stock_utils import RESEARCHES
 from utils.telegram import background_search_and_notify
 #웹 훅(사용 정지)
 # from webhook_routes import register_webhook_routes
@@ -13,8 +15,6 @@ app = Flask(__name__)
 load_dotenv()
 
 TOKEN = os.getenv("TOKEN")
-
-RESEARCHES = ['rsi', 'long-lower-shadow','52weeks']
 
 @app.route("/")
 def home():

@@ -6,10 +6,48 @@ from dotenv import load_dotenv
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, MessageHandler, filters, ContextTypes
 
-from scans.long_shadow_scan import long_lower_shadow_scan, format_shadow_message
-from scans.new_high_scan import run_new_high_scan, format_new_high_message
-from scans.rsi_scan import format_rsi_message, rsi_scan
+from core.settings import MAX_LENGTH
+from scan.kr.long_shadow_scan import long_lower_shadow_scan, format_shadow_message
+from scan.kr.new_high_scan import run_new_high_scan, format_new_high_message
+from scan.kr.rsi_scan import format_rsi_message, rsi_scan
+from scan.us.long_lower_shadow import *
+from scan.us.new_high_scan import *
+from scan.us.rsi_scan import *
 
+SEARCH_CONFIG = {
+    # 🇰🇷 한국 종목
+    'rsi': {
+        'label': '📈 RSI 분석 중...',
+        'function': lambda: rsi_scan(),
+        'formatter': format_rsi_message
+    },
+    'lower-shadow': {
+        'label': '💧 아래꼬리 검색 중...',
+        'function': lambda: long_lower_shadow_scan(),
+        'formatter': format_shadow_message
+    },
+    '52w': {
+        'label': '📊 52주 신고가 검색 중...',
+        'function': lambda: run_new_high_scan(),
+        'formatter': format_new_high_message
+    },
+    # 🇺🇸 미국 종목
+    'us-rsi': {
+        'label': '🇺🇸📈 미국 RSI 분석 중...',
+        'function': lambda: us_rsi_scan(),
+        'formatter': format_us_rsi_summary
+    },
+    'us-lower-shadow': {
+        'label': '🇺🇸💧 미국 아래꼬리 검색 중...',
+        'function': lambda: us_long_lower_shadow_scan(),
+        'formatter': format_us_long_shadow
+    },
+    'us-52w': {
+        'label': '🇺🇸📊 미국 52주 신고가 검색 중...',
+        'function': lambda: us_new_high_scan(),
+        'formatter': format_us_52week_high
+    }
+}
 
 load_dotenv()
 
@@ -21,7 +59,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # 봇 토큰 설정
-BOT_TOKEN = os.getenv('STOCK_STUDY_TOKEN')
+BOT_TOKEN = os.getenv('TOKEN')
 
 # 사용자 상태 관리
 user_states = {}
@@ -40,9 +78,18 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # 인라인 키보드 생성
     keyboard = [
-        [InlineKeyboardButton("📈 RSI 검색", callback_data='rsi')],
-        [InlineKeyboardButton("💧 아래꼬리 검색", callback_data='lower-shadow')],
-        [InlineKeyboardButton("📊 52주 신고가", callback_data='52w')]
+        [
+            InlineKeyboardButton("📈 RSI (🇰🇷)", callback_data='rsi'),
+            InlineKeyboardButton("📈 RSI (🇺🇸)", callback_data='us-rsi')
+        ],
+        [
+            InlineKeyboardButton("💧 아래꼬리 (🇰🇷)", callback_data='lower-shadow'),
+            InlineKeyboardButton("💧 아래꼬리 (🇺🇸)", callback_data='us-lower-shadow')
+        ],
+        [
+            InlineKeyboardButton("📊 52주 신고가 (🇰🇷)", callback_data='52w'),
+            InlineKeyboardButton("📊 52주 신고가 (🇺🇸)", callback_data='us-52w')
+        ]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
 
@@ -86,81 +133,73 @@ async def handle_callback_query(update: Update, context: ContextTypes.DEFAULT_TY
 
 # 검색 선택 처리
 async def handle_search_selection(query, user_id: int, selected_option: str):
-    """사용자가 선택한 검색 옵션 처리"""
-    # 사용자 상태 업데이트
-    user_states[user_id] = 'searching'
-
-    search_options = {
-        'rsi': {
-            'type': 'rsi',
-            'message': '📈 RSI 분석 검색하고 있습니다...'
-        },
-        'lower-shadow': {
-            'type': 'lower-shadow',
-            'message': '💧 아래꼬리 검색하고 있습니다...'
-        },
-        '52w': {
-            'type': '52w',
-            'message': '📊 52주 신고가 검색하고 있습니다...'
-        }
-    }
-
-    if selected_option in search_options:
-        option_info = search_options[selected_option]
-
-        # 검색 시작 메시지
-        await query.edit_message_text(option_info['message'])
-
-        # 실제 검색 수행
-        await perform_search(query, user_id, option_info['type'])
-    else:
+    if selected_option not in SEARCH_CONFIG:
         await query.edit_message_text("잘못된 선택입니다. /start 를 다시 입력해주세요.")
-        if user_id in user_states:
-            del user_states[user_id]
+        user_states.pop(user_id, None)
+        return
+
+    user_states[user_id] = 'searching'
+    await perform_search(query, user_id, selected_option)
 
 
 # 검색 수행
 async def perform_search(query, user_id: int, search_type: str):
-    """실제 검색 수행"""
     try:
-        logger.info(f"Starting search for user {user_id}, type: {search_type}")
+        logger.info(f"🔎 사용자 {user_id} 검색 시작: {search_type}")
 
-        # 검색 함수 매핑
-        search_functions = {
-            'rsi': search_rsi,
-            'lower-shadow': search_lower_shadow,
-            '52w': search_52week_high_price
-        }
-
-        if search_type in search_functions:
-            # 해당 검색 함수 호출
-            result_message = await search_functions[search_type](user_id)
-
-            # 검색 결과 전송
-            if result_message:
-                # result_message = f"검색 결과 ({len(results)}개):\n\n"
-                # for i, item in enumerate(results, 1):
-                #     result_message += f"{i}. {item['name']} - {item['description']}\n"
-
-                await query.message.reply_text(result_message)
-            # else:
-            #     await query.message.reply_text("검색 결과가 없습니다.")
-        else:
+        config = SEARCH_CONFIG.get(search_type)
+        if not config:
             await query.message.reply_text("지원하지 않는 검색 유형입니다.")
+            return
 
-        # 사용자 상태 리셋
-        if user_id in user_states:
-            del user_states[user_id]
+        # 검색 시작 메시지
+        await query.edit_message_text(config['label'])
 
-        # 다시 시작할 수 있도록 안내
+        await asyncio.sleep(1)  # UX용 대기
+
+        df = config['function']()
+        message = config['formatter'](df)
+
+        # 메시지 분할 전송
+        await send_long_message(query, message)
+
+        # await query.message.reply_text(message)
+
+    except Exception as e:
+        logger.error(f"❌ 검색 중 오류: {e}")
+        await query.message.reply_text("검색 중 오류가 발생했습니다. 다시 /start 명령어로 시도해주세요.")
+    finally:
+        user_states.pop(user_id, None)
         await asyncio.sleep(1)
         await query.message.reply_text("새로운 검색을 원하시면 /start 를 입력해주세요.")
 
-    except Exception as e:
-        logger.error(f"Search error for user {user_id}: {e}")
-        await query.message.reply_text("검색 중 오류가 발생했습니다. 다시 /start 명령어로 시도해주세요.")
-        if user_id in user_states:
-            del user_states[user_id]
+async def send_long_message(query, message: str):
+    if len(message) <= MAX_LENGTH:
+        await query.message.reply_text(message)
+        return
+
+    lines = message.split('\n\n')
+    chunk = ""
+
+    for line in lines:
+        # 줄 자체가 너무 길면 쪼개기
+        if len(line) > MAX_LENGTH:
+            while len(line) > MAX_LENGTH:
+                part = line[:MAX_LENGTH]
+                await query.message.reply_text(part.strip())
+                line = line[MAX_LENGTH:]
+            if line:
+                await query.message.reply_text(line.strip())
+            continue
+
+        if len(chunk) + len(line) + 2 <= MAX_LENGTH:
+            chunk += line + "\n\n"
+        else:
+            await query.message.reply_text(chunk.strip())
+            chunk = line + "\n\n"
+
+    if chunk:
+        await query.message.reply_text(chunk.strip())
 
 
 # 검색 함수들
