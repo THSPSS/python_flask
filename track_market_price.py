@@ -4,107 +4,182 @@ import time
 import pandas as pd
 from datetime import datetime  # 인증 토큰 발급 함수
 
-from data.stock_loader import get_code_dict_by_name
+from dotenv import load_dotenv
+from openpyxl import load_workbook
+from openpyxl.styles import Font
+
 from utils.stock_utils import fetch_daily_chart, get_token
+from utils.telegram import send_to_telegram
 
+load_dotenv()
 
-def build_name_code_map(base_file_path: str) -> dict:
-    df_base = pd.read_excel(base_file_path)
+# 봇 토큰 설정
+BOT_TOKEN = os.getenv('TOKEN')
+GROUP_ID = os.getenv('GROUP_ID')
 
-    if "종목명" not in df_base.columns:
-        raise ValueError("❌ '종목명' 컬럼이 필요합니다.")
+TODAY = datetime.today().strftime("%Y%m%d")
 
-    name_list = df_base["종목명"].dropna().tolist()
-    code_dict = get_code_dict_by_name()  # {회사명: 종목코드}
-
-    name_code_map = {}
-    unmatched = []
-
-    # ✅ 수동 예외 매핑 추가
-    manual_code_map = {
-        "sk바이오팜": "326030"
-    }
-
-    for name in name_list:
-        matched_code = None
-
-        # 0. 수동 매핑 우선 (대소문자 무시)
-        lowered_name = name.lower()
-        if lowered_name in manual_code_map:
-            matched_code = manual_code_map[lowered_name]
-
-        # 1. 완전 일치
-        elif name in code_dict:
-            matched_code = code_dict[name]
-
-        # 2. 부분 일치 (예: '삼성화재' in '삼성화재해상보험')
-        else:
-            for full_name, code in code_dict.items():
-                if name in full_name:
-                    matched_code = code
-                    break
-
-        if matched_code:
-            name_code_map[name] = matched_code
-        else:
-            unmatched.append(name)
-
-    if unmatched:
-        print(f"❗매칭 실패 종목: {unmatched}")
-
-    return name_code_map
-
-def get_today_closes(token: str, name_code_map: dict) -> dict:
-    today = datetime.today().strftime("%Y%m%d")
+def get_today_closes(token: str, codes: list[str]) -> dict[str, int]:
     closes = {}
 
-    for name, code in name_code_map.items():
-        print(name , code)
-        df = fetch_daily_chart(token, code, base_date=today)
+    for raw_code in codes:
+        code = f"{int(raw_code):06d}"  # 6자리 문자열 보정
+        print(f"📌 요청: {code}")
+
+        df = fetch_daily_chart(token, code, base_date=TODAY)
         if df.empty:
+            print(f"⚠️ {code}: 데이터 없음")
             continue
 
         try:
             close_price = int(float(df.iloc[0]["cur_prc"] or 0))
-            closes[name] = close_price
-            time.sleep(0.2)  # 또는 random.uniform(0.2, 0.6)
+            closes[code] = close_price
+            print(f"✅ {code}: {close_price}")
+            time.sleep(0.2)
         except Exception as e:
-            print(f"⚠️ {name} 종가 추출 실패: {e}")
+            print(f"⚠️ {code} 종가 추출 실패: {e}")
 
     return closes
 
 
-def update_price_history_from_kiwoom(base_file_path: str):
-    """코스피 100.xlsx 기준으로 종가 기록 누적 저장"""
+def update_history_file(base_file_path: str, closes: dict[str, int]):
     today_col = datetime.today().strftime("%Y-%m-%d")
 
-    df_base = pd.read_excel(base_file_path)
-    if "종목명" not in df_base.columns:
-        raise ValueError("❌ '종목명' 컬럼이 필요합니다.")
+    # 기존 파일 불러오기
+    df_history = pd.read_excel(base_file_path, dtype={"종목코드": str})
 
-    # ✅ symbol dict → {symbol: name} → name to code 역맵핑
-    name_list = df_base["종목명"].dropna().tolist()
-    name_code_map = build_name_code_map(base_file_path)
+    if "종목코드" not in df_history.columns:
+        raise ValueError("❌ '종목코드' 컬럼이 필요합니다.")
+
+    # 종가 컬럼이 없다면 추가
+    if today_col not in df_history.columns:
+        df_history[today_col] = None
+
+    # ✅ 종가 업데이트: 종목코드 기준으로만 넣음 (인덱스 사용 안함)
+    for idx, row in df_history.iterrows():
+        raw_code = row.get("종목코드")
+
+        try:
+            code = f"{int(str(raw_code).strip().split('.')[0]):06d}"  # 문자열화 → 공백제거 → 소수점 제거 → 6자리
+        except Exception as e:
+            print(f"⚠️ 종목코드 변환 실패 (row {idx}): {raw_code} -> {e}")
+            continue
+
+        if code in closes:
+            df_history.at[idx, today_col] = closes[code]
+            print(f"✅ {code}: 종가 {closes[code]} 삽입 완료 (row {idx})")
+        else:
+            print(f"⚠️ {code} not in closes")
+
+    df_history.to_excel(base_file_path, index=False)
+    print(f"✅ 저장 완료: {base_file_path}")
+
+    # ✅ 색상 적용
+    wb = load_workbook(base_file_path)
+    ws = wb.active
+
+    # 열 인덱스 계산 (A=1부터 시작)
+    col_index_map = {cell.value: cell.column for cell in ws[1]}
+    if today_col not in col_index_map:
+        print("⚠️ 오늘 컬럼을 찾을 수 없습니다.")
+        return
+
+    today_col_idx = col_index_map[today_col]
+    all_dates = [col for col in df_history.columns if col not in ["종목코드", "종목명"]]
+    all_dates_sorted = sorted(all_dates)
+
+    if len(all_dates_sorted) < 2:
+        print("ℹ️ 비교할 어제 데이터가 없어 색상 적용 생략")
+        return
+
+    yesterday_col = all_dates_sorted[-2]
+    yesterday_col_idx = col_index_map[yesterday_col]
+
+    for row_idx in range(2, ws.max_row + 1):  # 헤더 제외
+        try:
+            today_val = float(ws.cell(row=row_idx, column=today_col_idx).value)
+            yesterday_val = float(ws.cell(row=row_idx, column=yesterday_col_idx).value)
+
+            if today_val > yesterday_val:
+                ws.cell(row=row_idx, column=today_col_idx).font = Font(color="FF0000")  # 빨강
+            elif today_val < yesterday_val:
+                ws.cell(row=row_idx, column=today_col_idx).font = Font(color="0000FF")  # 파랑
+        except (TypeError, ValueError):
+            continue  # 값이 없거나 잘못된 경우 생략
+
+    wb.save(base_file_path)
+    print("🎨 색상 적용 완료")
+
+
+def update_excel_with_prices(file_path: str, closes: dict[str, int]):
+    today_col = datetime.today().strftime("%Y-%m-%d")
+
+    wb = load_workbook(file_path)
+    ws = wb.active
+
+    # ✅ 헤더에 오늘 날짜 열 추가
+    print("max_col", ws.max_column)
+    max_col = ws.max_column + 1
+    ws.cell(row=1, column=max_col, value=today_col)
+
+    # ✅ 종가 삽입 (종목코드 열은 1열이라고 가정)
+    for row in range(2, ws.max_row + 1):  # ✅ 반드시 마지막 행 포함 → range(... + 1)
+        code_cell = ws.cell(row=row, column=1)
+        raw_code = code_cell.value
+
+        try:
+            # ✅ 견고한 종목코드 파싱: strip + 소수점 제거 + 6자리 보정
+            code = f"{int(str(raw_code).strip().split('.')[0]):06d}"
+        except Exception as e:
+            print(f"⚠️ row {row} 종목코드 파싱 실패: {raw_code} -> {e}")
+            continue
+
+        if code in closes:
+            price = closes[code]
+            print(f"✅ {code} (row {row}): {price}")
+            cell = ws.cell(row=row, column=max_col, value=price)
+
+            # ✅ 어제 데이터가 있다면 색상 비교
+            if max_col >= 6:  # 종목코드, 종목명, + 2일치 이상
+                try:
+                    prev_value = ws.cell(row=row, column=max_col - 1).value
+                    if prev_value is not None:
+                        prev_value = float(prev_value)
+                        if price > prev_value:
+                            cell.font = Font(color="FF0000")  # 빨강
+                        elif price < prev_value:
+                            cell.font = Font(color="0000FF")  # 파랑
+                except Exception:
+                    pass
+        else:
+            print(f"⚠️ {code} (row {row}) not in closes")
+
+    wb.save(file_path)
+    print(f"✅ 기존 서식 유지하며 저장 완료: {file_path}")
+
+def update_price_history_from_kiwoom(base_file_path: str):
+    """코스피 100.xlsx 기준으로 종가 기록 누적 저장"""
+    df_base = pd.read_excel(base_file_path, dtype={"종목코드": str})
+    if "종목코드" not in df_base.columns:
+        raise ValueError("❌ '종목코드' 컬럼이 필요합니다.")
+
+    code_list = df_base["종목코드"].dropna().tolist()
+    code_list = [f"{int(code):06d}" for code in code_list]  # 안전하게 6자리로
 
     token = get_token()
-    price_map = get_today_closes(token, name_code_map)
+    price_map = get_today_closes(token, code_list)
+    update_history_file(base_file_path, price_map)
 
-    # ✅ 히스토리 파일 업데이트
-    history_file = base_file_path.replace(".xlsx", "_history.xlsx")
-    if os.path.exists(history_file):
-        df_history = pd.read_excel(history_file, index_col=0)
-    else:
-        # 🆕 히스토리 파일 처음 생성 시: 종목명 + 종목코드로 시작
-        df_history = pd.DataFrame({
-            "종목코드": pd.Series(name_code_map)
-        })
-        df_history.index.name = "종목명"
-
-    df_history[today_col] = pd.Series(price_map)
-    df_history = df_history.sort_index()
-    df_history.to_excel(history_file)
-    print(f"✅ 저장 완료: {history_file}")
 
 if __name__ == "__main__":
-    update_price_history_from_kiwoom("data/tracking/코스닥 시가총액 100 20250711T1044.xlsx")
-    update_price_history_from_kiwoom("data/tracking/코스피 시가총액 100 20250711T1044.xlsx")
+    kosdaq_file_path = "data/tracking/코스닥_20250714_history.xlsx"
+    kospi_file_path = "data/tracking/코스피_20250714_history.xlsx"
+
+    update_price_history_from_kiwoom(kosdaq_file_path)
+    update_price_history_from_kiwoom(kospi_file_path)
+
+    message = f"📊 {TODAY} 종가 기록 완료!\n\n📎 첨부된 파일을 확인하세요."
+    send_to_telegram(BOT_TOKEN, GROUP_ID, message)
+
+    send_to_telegram(BOT_TOKEN , GROUP_ID ,message="코스닥 150 종가 확인" , file_path=kosdaq_file_path)
+    send_to_telegram(BOT_TOKEN , GROUP_ID ,message="코스피 200 종가 확인" , file_path=kospi_file_path)

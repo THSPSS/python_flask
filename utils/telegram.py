@@ -4,9 +4,9 @@ from core.settings import MAX_LENGTH
 from scan.kr.long_shadow_scan import long_lower_shadow_scan, format_shadow_message
 from scan.kr.rsi_scan import rsi_scan, format_rsi_message
 from scan.kr.new_high_scan import run_new_high_scan , format_new_high_message
-from scan.us.long_lower_shadow import *
-from scan.us.new_high_scan import *
-from scan.us.rsi_scan import *
+from scan.us.long_lower_shadow import us_long_lower_shadow_scan, format_us_long_shadow
+from scan.us.new_high_scan import us_new_high_scan, format_us_52week_high
+from scan.us.rsi_scan import us_rsi_scan, format_us_rsi_summary
 
 
 # def send_to_telegram(recipient_id: str, message: str):
@@ -31,13 +31,38 @@ from scan.us.rsi_scan import *
 #     return response.json()
 
 
+def send_file_to_telegram(token: str, recipient_id: str, file_path: str, caption: str = ""):
+    print(f"📤 텔레그램 파일 전송 시도: chat_id={recipient_id}")
+    print(f"📁 파일 경로: {file_path}")
+    print(f"📝 캡션: {caption}")
+
+    url = f"https://api.telegram.org/bot{token}/sendDocument"
+
+    try:
+        with open(file_path, "rb") as f:
+            response = requests.post(
+                url,
+                data={"chat_id": recipient_id, "caption": caption},
+                files={"document": f}
+            )
+        if response.status_code == 200:
+            print(f"✅ 파일 전송 성공: {file_path}")
+        else:
+            print(f"❌ 파일 전송 실패: {response.status_code} - {response.text}")
+    except Exception as e:
+        print(f"❌ 예외 발생: {e}")
 
 
-def send_to_telegram(token: str,recipient_id: str, message: str):
+
+def send_to_telegram(token: str,recipient_id: str, message: str = "", file_path : str = ""):
     print(f"📤 텔레그램 전송 시도: chat_id={recipient_id}")
     print(f"📤 토큰 확인: token={token}")
     print(f"📨 전체 메시지 길이: {len(message)}")
     print(f"📦 메시지 내용:\n{message}")  # ✅ 전체 메시지 출력
+
+    # 파일 전송
+    if file_path:
+        send_file_to_telegram(token, recipient_id, file_path)
 
     # ✅ 4000자 이하일 경우 한 번에 전송
     if len(message) <= MAX_LENGTH:
@@ -56,6 +81,8 @@ def send_to_telegram(token: str,recipient_id: str, message: str):
 
     if chunk:
         _send_chunk(token, recipient_id, chunk.strip())
+
+
 
 def _send_chunk(token, recipient_id, text):
     url = f"https://api.telegram.org/bot{token}/sendMessage"

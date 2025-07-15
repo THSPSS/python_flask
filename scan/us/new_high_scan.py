@@ -13,9 +13,13 @@ def us_new_high_strategy(df, symbol, name):
     today_close = closes[-1]
     today_volume = volumes[-1]
     past_250 = closes[-250:]
+    max_close = max(past_250)
 
     if not is_above_us_min_price(today_close) or not is_above_min_volume(today_volume):
         return None
+
+    if today_close < max_close:
+        return None  # ✅ 오늘 종가가 신고가가 아니면 제외
 
     print(f"✅ 신고가: {symbol} ({name})")
 
@@ -34,7 +38,7 @@ def format_us_52week_high(df):
     now_time_format = get_korean_date_str()
 
     return f"📈 {now_time_format} 기준 미국 25주 신고가 종목\n\n" + "\n\n".join([
-        f"🔹 {row['symbol']} ({row['name']})\n📈 52주 신고가: ${row['52w_high']}"
+        f"🔹 {row['symbol']} ({row['name']})\n 📈 ${row['52w_high']}"
         for _, row in df.iterrows()
     ])
 

@@ -1563,7 +1563,9 @@ DPST|Direxion Daily Regional Banks Bull 3X Shares|P|DPST|Y|100.0|N|DPST
 DQ|DAQO New Energy Corp. American Depositary Shares, each representing five ordinary shares|N|DQ|N|100.0|N|DQ
 DRAG|Roundhill ETF Trust Roundhill China Dragons ETF|Z|DRAG|Y|100.0|N|DRAG
 DRAI|EA Series Trust Draco Evolution AI ETF|P|DRAI|Y|100.0|N|DRAI
+DRAY|Tidal Trust II YieldMax DKNG Option Income Strategy ETF|P|DRAY|Y|100.0|N|DRAY
 DRD|DRDGOLD Limited American Depositary Shares|N|DRD|N|100.0|N|DRD
+DRGN|Themes ETF Trust Themes China Generative Artificial Intelligence ETF|Z|DRGN|Y|100.0|N|DRGN
 DRH|Diamondrock Hospitality Company Common Stock|N|DRH|N|100.0|N|DRH
 DRH$A|Diamondrock Hospitality Company 8.250% Series A Cumulative Redeemable Preferred Stock|N|DRHpA|N|100.0|N|DRH-A
 DRI|Darden Restaurants, Inc. Common Stock|N|DRI|N|100.0|N|DRI
@@ -2580,6 +2582,7 @@ GPTY|Tidal Trust II YieldMax AI & Tech Portfolio Option Income ETF|P|GPTY|Y|100.
 GPUS|Hyperscale Data, Inc. Common Stock|A|GPUS|N|100.0|N|GPUS
 GPUS$D|Hyperscale Data, Inc. 13.00% Series D Cumulative Redeemable Perpetual Preferred Stock|A|GPUSpD|N|100.0|N|GPUS-D
 GPZ|VanEck ETF Trust VanEck Alternative Asset Manager ETF|P|GPZ|Y|100.0|N|GPZ
+GQGU|The Advisors' Inner Circle Fund III GQG US Equity ETF|P|GQGU|Y|100.0|N|GQGU
 GQI|Natixis ETF Trust Natixis Gateway Quality Income ETF|P|GQI|Y|100.0|N|GQI
 GQRE|FlexShares Global Quality Real Estate Index Fund|P|GQRE|Y|100.0|N|GQRE
 GRAF|Graf Global Corp. Class A ordinary shares|A|GRAF|N|100.0|N|GRAF
@@ -2723,8 +2726,10 @@ HESM|Hess Midstream LP Class A Representing Limited Partner Interests|N|HESM|N|1
 HEWJ|iShares Currency Hedged MSCI Japan ETF|P|HEWJ|Y|100.0|N|HEWJ
 HEZU|iShares Currency Hedged MSCI Eurozone ETF|P|HEZU|Y|100.0|N|HEZU
 HF|DGA Core Plus Absolute Return ETF|N|HF|Y|100.0|N|HF
+HFEQ|Tidal Trust I Unlimited HFEQ Equity Long/Short ETF|P|HFEQ|Y|100.0|N|HFEQ
 HFGM|Unlimited HFGM Global Macro ETF|P|HFGM|Y|100.0|N|HFGM
 HFGO|Hartford Large Cap Growth ETF|Z|HFGO|Y|100.0|N|HFGO
+HFMF|Tidal Trust I Unlimited HFMF Managed Futures ETF|P|HFMF|Y|100.0|N|HFMF
 HFND|Unlimited HFND Multi-Strategy Return Tracker ETF|P|HFND|Y|100.0|N|HFND
 HFRO|Highland Opportunities and Income Fund Common Shares of Beneficial Interest|N|HFRO|N|100.0|N|HFRO
 HFRO$A|Highland Opportunities and Income Fund 5.375% Series A Cumulative Preferred Shares|N|HFROpA|N|100.0|N|HFRO-A
@@ -2776,6 +2781,7 @@ HNW|Pioneer Diversified High Income Fund, Inc.|A|HNW|N|100.0|N|HNW
 HOCT|Innovator ETFs Trust Innovator Premium Income 9 Buffer ETF - October|Z|HOCT|Y|100.0|N|HOCT
 HODL|VanEck Bitcoin Trust Common Shares of Beneficial Interest|Z|HODL|Y|100.0|N|HODL
 HOG|Harley-Davidson, Inc. Common Stock|N|HOG|N|100.0|N|HOG
+HOLA|J.P. Morgan Exchange-Traded Fund Trust JPMorgan International Hedged Equity Laddered Overlay ETF|P|HOLA|Y|100.0|N|HOLA
 HOMB|Home BancShares, Inc. Common Stock|N|HOMB|N|100.0|N|HOMB
 HOMZ|Hoya Capital Housing ETF|P|HOMZ|Y|100.0|N|HOMZ
 HOOW|Roundhill ETF Trust Roundhill HOOD WeeklyPay ETF|Z|HOOW|Y|100.0|N|HOOW
@@ -3676,6 +3682,7 @@ LUMN|Lumen Technologies, Inc. Common Stock|N|LUMN|N|100.0|N|LUMN
 LUV|Southwest Airlines Company Common Stock|N|LUV|N|100.0|N|LUV
 LUX|Tema ETF Trust Tema Luxury ETF|P|LUX|Y|100.0|N|LUX
 LUXE|LuxExperience B.V. American Depositary Shares, each representing one Ordinary Share|N|LUXE|N|100.0|N|LUXE
+LVDS|J.P. Morgan Exchange-Traded Fund Trust JPMorgan Fundamental Data Science Large Value ETF|Z|LVDS|Y|100.0|N|LVDS
 LVHI|Franklin International Low Volatility High Dividend Index ETF |Z|LVHI|Y|100.0|N|LVHI
 LVS|Las Vegas Sands Corp. Common Stock|N|LVS|N|100.0|N|LVS
 LVWR|LiveWire Group, Inc. Common Stock|N|LVWR|N|100.0|N|LVWR
@@ -4458,8 +4465,8 @@ PBMY|PGIM S&P 500 Buffer 20 ETF - May|Z|PBMY|Y|100.0|N|PBMY
 PBNV|PGIM S&P 500 Buffer 20 ETF - November|Z|PBNV|Y|100.0|N|PBNV
 PBOC|PGIM S&P 500 Buffer 20 ETF - October|Z|PBOC|Y|100.0|N|PBOC
 PBP|Invesco S&P 500 BuyWrite ETF|Z|PBP|Y|100.0|N|PBP
-PBR|Petroleo Brasileiro S.A.- Petrobras Common Stock|N|PBR|N|100.0|N|PBR
-PBR.A|Petroleo Brasileiro S.A.- Petrobras American Depositary Shares|N|PBR.A|N|100.0|N|PBR.A
+PBR|Petroleo Brasileiro S.A. Petrobras ADS|N|PBR|N|100.0|N|PBR
+PBR.A|Petroleo Brasileiro S.A. Petrobras American Depositary Shares representing Preferred Shares|N|PBR.A|N|100.0|N|PBR.A
 PBSE|PGIM S&P 500 Buffer 20 ETF - September|Z|PBSE|Y|100.0|N|PBSE
 PBT|Permian Basin Royalty Trust Common Stock|N|PBT|N|100.0|N|PBT
 PBTP|Invesco 0-5 Yr US TIPS ETF|Z|PBTP|Y|100.0|N|PBTP
@@ -4666,7 +4673,6 @@ PRGO|Perrigo Company plc Ordinary Shares|N|PRGO|N|100.0|N|PRGO
 PRH|Prudential Financial, Inc. 5.950% Junior Subordinated Notes due 2062|N|PRH|N|100.0|N|PRH
 PRI|Primerica, Inc. Common Stock|N|PRI|N|100.0|N|PRI
 PRIF$D|Priority Income Fund, Inc. 7.00% Series D Term Preferred Stock due 2029|N|PRIFpD|N|100.0|N|PRIF-D
-PRIF$I|Priority Income Fund, Inc. 6.125% Series I Term Preferred Stock due 2028|N|PRIFpI|N|100.0|N|PRIF-I
 PRIF$J|Priority Income Fund, Inc. 6.000% Series J Term Preferred Stock due 2028|N|PRIFpJ|N|100.0|N|PRIF-J
 PRIF$K|Priority Income Fund, Inc. 7.000% Series K Cumulative Preferred Stock|N|PRIFpK|N|100.0|N|PRIF-K
 PRIF$L|Priority Income Fund, Inc. 6.375% Series L Term Preferred Stock Due 2029|N|PRIFpL|N|100.0|N|PRIF-L
@@ -5150,6 +5156,7 @@ SBEV|Splash Beverage Group, Inc. (NV) Common Stock|A|SBEV|N|100.0|N|SBEV
 SBEV.W|Splash Beverage Group, Inc. Warrants to purchase one whole share of Common Stock at an exercise price of $4.60|A|SBEV.WS|N|100.0|N|SBEV+
 SBH|Sally Beauty Holdings, Inc. (Name to be changed from Sally Holdings, Inc.) Common Stock|N|SBH|N|100.0|N|SBH
 SBI|Western Asset Intermediate Muni Fund Inc Common Stock|N|SBI|N|100.0|N|SBI
+SBIL|Simplify Exchange Traded Funds Simplify Government Money Market ETF|P|SBIL|Y|100.0|N|SBIL
 SBIO|ALPS Medical Breakthroughs ETF|P|SBIO|Y|100.0|N|SBIO
 SBIT|ProShares Trust ProShares UltraShort Bitcoin ETF|P|SBIT|Y|100.0|N|SBIT
 SBND|Columbia Short Duration Bond ETF|P|SBND|Y|100.0|N|SBND
@@ -5359,6 +5366,7 @@ SLI|Standard Lithium Ltd. Common Shares|A|SLI|N|100.0|N|SLI
 SLND|Southland Holdings, Inc. Common Stock|A|SLND|N|100.0|N|SLND
 SLND.W|Southland Holdings, Inc. Warrants|A|SLND.WS|N|100.0|N|SLND+
 SLNZ|TCW Senior Loan ETF|N|SLNZ|Y|100.0|N|SLNZ
+SLON|ProShares Trust ProShares Ultra Solana ETF|P|SLON|Y|100.0|N|SLON
 SLQT|SelectQuote, Inc. Common Stock|N|SLQT|N|100.0|N|SLQT
 SLSR|Solaris Resources Inc. Common Shares|A|SLSR|N|100.0|N|SLSR
 SLV|iShares Silver Trust|P|SLV|Y|100.0|N|SLV
@@ -5673,7 +5681,7 @@ TBG|EA Series Trust TBG Dividend Focus ETF|P|TBG|Y|100.0|N|TBG
 TBI|TrueBlue, Inc. Common Stock|N|TBI|N|100.0|N|TBI
 TBJL|Innovator 20  Year Treasury Bond 9 Buffer ETF - July|Z|TBJL|Y|100.0|N|TBJL
 TBLL|Invesco Short Term Treasury ETF|P|TBLL|Y|100.0|N|TBLL
-TBLU|Tortoise Global Water ESG Fund|P|TBLU|Y|100.0|N|TBLU
+TBLU|Tortoise Capital Series Trust Tortoise Global Water Fund|N|TBLU|Y|100.0|N|TBLU
 TBN|Tamboran Resources Corporation Common stock|N|TBN|N|100.0|N|TBN
 TBT|ProShares UltraShort Lehman 20  Year Treasury|P|TBT|Y|100.0|N|TBT
 TBUX|T. Rowe Price Ultra Short-Term Bond ETF|P|TBUX|Y|100.0|N|TBUX
@@ -6090,6 +6098,7 @@ UXAP|First Trust Exchange-Traded Fund VIII FT Vest U.S. Equity Uncapped Accelera
 UXI|ProShares Ultra Industrials|P|UXI|Y|100.0|N|UXI
 UXJA|First Trust Exchange-Traded Fund VIII FT Vest U.S. Equity Uncapped Accelerator ETF - January|Z|UXJA|Y|100.0|N|UXJA
 UXOC|First Trust Exchange-Traded Fund VIII FT Vest U.S. Equity Uncapped Accelerator ETF - October|Z|UXOC|Y|100.0|N|UXOC
+UXRP|ProShares Trust ProShares Ultra XRP ETF|P|UXRP|Y|100.0|N|UXRP
 UYG|ProShares Ultra Financials|P|UYG|Y|100.0|N|UYG
 UYM|ProShares Ultra Materials|P|UYM|Y|100.0|N|UYM
 UZD|United States Cellular Corporation 6.250% Senior Notes due 2069|N|UZD|N|100.0|N|UZD
@@ -6589,4 +6598,4 @@ ZVOL|Volatility Premium Plus ETF|Z|ZVOL|Y|100.0|N|ZVOL
 ZVV|NYSE ARCA test stock|P|ZVV|N|100.0|Y|ZVV
 ZWS|Zurn Elkay Water Solutions Corporation Common Stock|N|ZWS|N|100.0|N|ZWS
 ZXIET|IEX Test Company Test Symbol Three for IEX|V|ZXIET|N|100.0|Y|ZXIET
-File Creation Time: 0711202514:01|||||||
+File Creation Time: 0715202503:04|||||||
