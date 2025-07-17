@@ -31,6 +31,11 @@ SEARCH_CONFIG = {
         'function': lambda: run_new_high_scan(),
         'formatter': format_new_high_message
     },
+    '30w': {
+        'label': '📊 30주 신고가 검색 중...',
+        'function': lambda: run_new_high_scan(date="150"),
+        'formatter': format_new_high_message
+    },
     # 🇺🇸 미국 종목
     'us-rsi': {
         'label': '🇺🇸📈 미국 RSI 분석 중...',
@@ -45,8 +50,13 @@ SEARCH_CONFIG = {
     'us-52w': {
         'label': '🇺🇸📊 미국 52주 신고가 검색 중...',
         'function': lambda: us_new_high_scan(),
-        'formatter': format_us_52week_high
-    }
+        'formatter': format_us_high
+    },
+    'us-30w': {
+        'label': '📊 30주 신고가 검색 중...',
+        'function': lambda: us_new_high_scan(date=150),
+        'formatter': format_us_high
+    },
 }
 
 load_dotenv()
@@ -89,6 +99,10 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [
             InlineKeyboardButton("📊 52주 신고가 (🇰🇷)", callback_data='52w'),
             InlineKeyboardButton("📊 52주 신고가 (🇺🇸)", callback_data='us-52w')
+        ],
+        [
+            InlineKeyboardButton("📊 30주 신고가 (🇰🇷)", callback_data='30w'),
+            InlineKeyboardButton("📊 30주 신고가 (🇺🇸)", callback_data='us-30w')
         ]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)

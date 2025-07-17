@@ -145,10 +145,13 @@ def update_excel_with_prices(file_path: str, closes: dict[str, int]):
                     prev_value = ws.cell(row=row, column=max_col - 1).value
                     if prev_value is not None:
                         prev_value = float(prev_value)
-                        if price > prev_value:
-                            cell.font = Font(color="FF0000")  # 빨강
-                        elif price < prev_value:
-                            cell.font = Font(color="0000FF")  # 파랑
+
+                        # 🔒 기존 셀 색상이 없을 때만 적용
+                        if not cell.font or not cell.font.color or cell.font.color.rgb is None:
+                            if price > prev_value:
+                                cell.font = Font(color="FF0000")  # 빨강
+                            elif price < prev_value:
+                                cell.font = Font(color="0000FF")  # 파랑
                 except Exception:
                     pass
         else:

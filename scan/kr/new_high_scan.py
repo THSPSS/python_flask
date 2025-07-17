@@ -6,7 +6,7 @@ import pandas as pd
 
 
 #신규
-def new_high_strategy(token: str) -> pd.DataFrame:
+def new_high_strategy(token: str , date : str = "250") -> pd.DataFrame:
     """
     Kiwoom REST API를 이용해 신고가 종목 리스트 조회
     """
@@ -23,7 +23,7 @@ def new_high_strategy(token: str) -> pd.DataFrame:
         "trde_qty_tp": "00000",
         "crd_cnd": "0",
         "updown_incls": "0",
-        "dt": "250",
+        "dt": date,
         "stex_tp": "1"
     }
 
@@ -35,12 +35,12 @@ def new_high_strategy(token: str) -> pd.DataFrame:
 
         return pd.DataFrame(data.get("ntl_pric", []))
     except Exception as e:
-        print("❌ 52주 신고가 오류 발생:", e)
+        print("❌ 신고가 오류 발생:", e)
         return pd.DataFrame()
 
-def run_new_high_scan():
+def run_new_high_scan(date: str ="250"):
     token = get_token()# 토큰만 발급
-    df = new_high_strategy(token)
+    df = new_high_strategy(token , date)
 
     if df.empty:
         print("❗신고가 종목이 없습니다.")
@@ -60,13 +60,13 @@ def new_high_scan():
 
 def format_new_high_message(df: pd.DataFrame) -> str:
     if df.empty:
-        return "❗250일 신고가 종목이 없습니다."
+        return "❗신고가 종목이 없습니다."
 
     final_df =  filtering_stock(df)
 
     now_time_format = get_korean_date_str()
 
-    return f"📈 {now_time_format} 기준 250일 신고가 종목\n\n" + "\n\n".join([
+    return f"📈 {now_time_format} 기준 신고가 종목\n\n" + "\n\n".join([
         f"🔹 {row['stk_nm']} ({row['stk_cd']})\n📈 현재가: {row['cur_prc']}"
         for _, row in  final_df.iterrows()
     ])

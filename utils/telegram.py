@@ -5,7 +5,7 @@ from scan.kr.long_shadow_scan import long_lower_shadow_scan, format_shadow_messa
 from scan.kr.rsi_scan import rsi_scan, format_rsi_message
 from scan.kr.new_high_scan import run_new_high_scan , format_new_high_message
 from scan.us.long_lower_shadow import us_long_lower_shadow_scan, format_us_long_shadow
-from scan.us.new_high_scan import us_new_high_scan, format_us_52week_high
+from scan.us.new_high_scan import us_new_high_scan, format_us_high
 from scan.us.rsi_scan import us_rsi_scan, format_us_rsi_summary
 
 
@@ -113,7 +113,7 @@ def background_search_and_notify(token: str ,chat_id: str, code: str):
             message = format_us_long_shadow(df)
         elif us_code == "52weeks":
             df = us_new_high_scan()
-            message = format_us_52week_high(df)
+            message = format_us_high(df)
         else:
             message = f"❌ 지원하지 않는 미국 코드입니다: {us_code}"
     else:
