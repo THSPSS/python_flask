@@ -58,7 +58,7 @@ def filtering_stock(df):
 def new_high_scan():
     return run_scan(new_high_strategy)
 
-def format_new_high_message(df: pd.DataFrame) -> str:
+def format_new_high_message(df: pd.DataFrame , date: str) -> str:
     if df.empty:
         return "❗신고가 종목이 없습니다."
 
@@ -66,7 +66,7 @@ def format_new_high_message(df: pd.DataFrame) -> str:
 
     now_time_format = get_korean_date_str()
 
-    return f"📈 {now_time_format} 기준 신고가 종목\n\n" + "\n\n".join([
+    return f"📈 {now_time_format} 기준 {date}주 신고가 종목\n\n" + "\n\n".join([
         f"🔹 {row['stk_nm']} ({row['stk_cd']})\n📈 현재가: {row['cur_prc']}"
         for _, row in  final_df.iterrows()
     ])

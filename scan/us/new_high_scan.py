@@ -31,16 +31,16 @@ def us_new_high_strategy(df, symbol, name , date : int = 250):
     }
 
 
-def format_us_high(df):
+def format_us_high(df , date : str):
     if df.empty:
         return "❗미국 신고가 종목이 없습니다."
 
     now_time_format = get_korean_date_str()
 
-    return f"📈 {now_time_format} 기준 미국 신고가 종목\n\n" + "\n\n".join([
+    return f"📈 {now_time_format} 기준 미국 {date}주 신고가 종목\n\n" + "\n\n".join([
         f"🔹 {row['symbol']} ({row['name']})\n 📈 ${row['w_high']}"
         for _, row in df.iterrows()
     ])
 
-def us_new_high_scan(date: int = "250"):
+def us_new_high_scan(date: int = 250):
     return run_us_scan(lambda df, symbol, name: us_new_high_strategy(df, symbol, name, date=date))

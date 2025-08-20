@@ -63,7 +63,6 @@ def send_to_telegram(token: str,recipient_id: str, message: str = "", file_path 
     # 파일 전송
     if file_path:
         send_file_to_telegram(token, recipient_id, file_path)
-
     # ✅ 4000자 이하일 경우 한 번에 전송
     if len(message) <= MAX_LENGTH:
         _send_chunk(token, recipient_id, message.strip())
@@ -111,9 +110,12 @@ def background_search_and_notify(token: str ,chat_id: str, code: str):
         elif us_code == "long-lower-shadow":
             df = us_long_lower_shadow_scan()
             message = format_us_long_shadow(df)
+        elif us_code == "30weeks":
+            df = us_new_high_scan(date=150)
+            message = format_us_high(df , date="30")
         elif us_code == "52weeks":
             df = us_new_high_scan()
-            message = format_us_high(df)
+            message = format_us_high(df, date="52")
         else:
             message = f"❌ 지원하지 않는 미국 코드입니다: {us_code}"
     else:
@@ -123,9 +125,12 @@ def background_search_and_notify(token: str ,chat_id: str, code: str):
         elif code == "long-lower-shadow":
             df = long_lower_shadow_scan()
             message = format_shadow_message(df)
+        elif code == "30weeks":
+            df = run_new_high_scan(date="150")
+            message = format_new_high_message(df , date="30")
         elif code == "52weeks":
             df = run_new_high_scan()
-            message = format_new_high_message(df)
+            message = format_new_high_message(df, date="52")
         else:
             message = f"❌ 지원하지 않는 한국 코드입니다: {code}"
 

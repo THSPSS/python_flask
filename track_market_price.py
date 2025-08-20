@@ -45,22 +45,22 @@ def get_today_closes(token: str, codes: list[str]) -> dict[str, int]:
 def update_history_file(base_file_path: str, closes: dict[str, int]):
     today_col = datetime.today().strftime("%Y-%m-%d")
 
-    # 기존 파일 불러오기
+    # ✅ 기존 파일 불러오기
     df_history = pd.read_excel(base_file_path, dtype={"종목코드": str})
 
     if "종목코드" not in df_history.columns:
         raise ValueError("❌ '종목코드' 컬럼이 필요합니다.")
 
-    # 종가 컬럼이 없다면 추가
+    # ✅ 오늘 날짜 열이 없다면 추가
     if today_col not in df_history.columns:
         df_history[today_col] = None
 
-    # ✅ 종가 업데이트: 종목코드 기준으로만 넣음 (인덱스 사용 안함)
+    # ✅ 종가 업데이트
     for idx, row in df_history.iterrows():
         raw_code = row.get("종목코드")
 
         try:
-            code = f"{int(str(raw_code).strip().split('.')[0]):06d}"  # 문자열화 → 공백제거 → 소수점 제거 → 6자리
+            code = f"{int(str(raw_code).strip().split('.')[0]):06d}"
         except Exception as e:
             print(f"⚠️ 종목코드 변환 실패 (row {idx}): {raw_code} -> {e}")
             continue
@@ -74,41 +74,43 @@ def update_history_file(base_file_path: str, closes: dict[str, int]):
     df_history.to_excel(base_file_path, index=False)
     print(f"✅ 저장 완료: {base_file_path}")
 
-    # ✅ 색상 적용
+    # ✅ 색상 전체 적용
     wb = load_workbook(base_file_path)
     ws = wb.active
 
-    # 열 인덱스 계산 (A=1부터 시작)
-    col_index_map = {cell.value: cell.column for cell in ws[1]}
-    if today_col not in col_index_map:
-        print("⚠️ 오늘 컬럼을 찾을 수 없습니다.")
+    # 날짜 컬럼 인덱스 매핑 (A=1)
+    col_index_map = {cell.value: cell.column for cell in ws[1] if cell.value not in ["종목코드", "종목명"]}
+    sorted_dates = sorted(col_index_map.keys())  # 날짜 문자열 정렬
+
+    if len(sorted_dates) < 2:
+        print("ℹ️ 비교 가능한 날짜 열이 부족하여 색상 적용 생략")
         return
 
-    today_col_idx = col_index_map[today_col]
-    all_dates = [col for col in df_history.columns if col not in ["종목코드", "종목명"]]
-    all_dates_sorted = sorted(all_dates)
+    # ✅ 각 날짜별로 전날과 비교해서 색상 적용
+    for i in range(1, len(sorted_dates)):  # 두 번째 날짜부터 시작
+        prev_col_name = sorted_dates[i - 1]
+        curr_col_name = sorted_dates[i]
 
-    if len(all_dates_sorted) < 2:
-        print("ℹ️ 비교할 어제 데이터가 없어 색상 적용 생략")
-        return
+        prev_col_idx = col_index_map[prev_col_name]
+        curr_col_idx = col_index_map[curr_col_name]
 
-    yesterday_col = all_dates_sorted[-2]
-    yesterday_col_idx = col_index_map[yesterday_col]
+        for row_idx in range(2, ws.max_row + 1):  # 데이터 행 반복
+            try:
+                prev_val = float(ws.cell(row=row_idx, column=prev_col_idx).value)
+                curr_val = float(ws.cell(row=row_idx, column=curr_col_idx).value)
 
-    for row_idx in range(2, ws.max_row + 1):  # 헤더 제외
-        try:
-            today_val = float(ws.cell(row=row_idx, column=today_col_idx).value)
-            yesterday_val = float(ws.cell(row=row_idx, column=yesterday_col_idx).value)
-
-            if today_val > yesterday_val:
-                ws.cell(row=row_idx, column=today_col_idx).font = Font(color="FF0000")  # 빨강
-            elif today_val < yesterday_val:
-                ws.cell(row=row_idx, column=today_col_idx).font = Font(color="0000FF")  # 파랑
-        except (TypeError, ValueError):
-            continue  # 값이 없거나 잘못된 경우 생략
+                cell = ws.cell(row=row_idx, column=curr_col_idx)
+                if curr_val > prev_val:
+                    cell.font = Font(color="FF0000")  # 빨강
+                elif curr_val < prev_val:
+                    cell.font = Font(color="0000FF")  # 파랑
+                else:
+                    cell.font = Font(color="000000")  # 보합은 검정
+            except (TypeError, ValueError):
+                continue
 
     wb.save(base_file_path)
-    print("🎨 색상 적용 완료")
+    print("🎨 모든 날짜 열에 대해 색상 적용 완료")
 
 
 def update_excel_with_prices(file_path: str, closes: dict[str, int]):

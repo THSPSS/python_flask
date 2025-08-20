@@ -1,10 +1,13 @@
+import json
 import time
 from datetime import datetime
 
 import pandas as pd, numpy as np
+import websockets
 from dotenv import load_dotenv
 import requests
 import os
+import asyncio
 
 from core.settings import *
 
@@ -15,6 +18,7 @@ SECRET_KEY = os.getenv("KIWOOM_SECRET_KEY")
 
 # 미국-필터 조건
 EXCLUDE_SUFFIXES = {'W', 'R', 'P', 'Q'}
+SOCKET_URL = 'wss://api.kiwoom.com:10000/api/dostk/websocket'
 
 #토큰 가져오기
 def get_token() -> str:
@@ -114,3 +118,48 @@ def us_is_valid_symbol(symbol):
 
 def us_is_common_stock(name):
     return isinstance(name, str) and name.strip().endswith("- Common Stock")
+
+
+async def request_condition_list_async(token: str) -> dict | None:
+    try:
+        async with websockets.connect(SOCKET_URL) as websocket:
+            print("🔌 웹소켓 연결 성공")
+
+            # 1. 로그인 요청
+            login_payload = {
+                "trnm": "LOGIN",
+                "token": token
+            }
+            await websocket.send(json.dumps(login_payload))
+            print("🔐 로그인 요청 전송")
+
+            while True:
+                response = await websocket.recv()
+                data = json.loads(response)
+
+                if data.get("trnm") == "LOGIN":
+                    if data.get("return_code") != 0:
+                        print("❌ 로그인 실패:", data.get("return_msg"))
+                        return None
+                    else:
+                        print("✅ 로그인 성공 → 조건검색 목록 요청")
+                        await websocket.send(json.dumps({
+                            "trnm": "CNSRLST"
+                        }))
+
+                elif data.get("trnm") == "CNSRLST":
+                    print("📋 조건검색 목록 수신 완료")
+                    return data
+
+                elif data.get("trnm") == "PING":
+                    await websocket.send(json.dumps(data))
+
+                elif "return_msg" in data:
+                    print("📨 기타 메시지 수신:", data)
+
+    except Exception as e:
+        print("🚨 예외 발생:", e)
+        return None
+
+def request_condition_list(token: str) -> dict | None:
+    return asyncio.run(request_condition_list_async(token))

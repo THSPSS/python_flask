@@ -1,0 +1,484 @@
+python-dotenv could not parse statement starting at line 12
+python-dotenv could not parse statement starting at line 13
+python-dotenv could not parse statement starting at line 14
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 12
+python-dotenv could not parse statement starting at line 13
+python-dotenv could not parse statement starting at line 14
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+Traceback (most recent call last):
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 183, in <module>
+    update_price_history_from_kiwoom(kosdaq_file_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 174, in update_price_history_from_kiwoom
+    token = get_token()
+  File "C:\Users\Home\pycharmProjects\kapi\utils\stock_utils.py", line 28, in get_token
+    print("\U0001f50d 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f50d' in position 0: illegal multibyte sequence
+python-dotenv could not parse statement starting at line 12
+python-dotenv could not parse statement starting at line 13
+python-dotenv could not parse statement starting at line 14
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 12
+python-dotenv could not parse statement starting at line 13
+python-dotenv could not parse statement starting at line 14
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+Traceback (most recent call last):
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 183, in <module>
+    update_price_history_from_kiwoom(kosdaq_file_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 174, in update_price_history_from_kiwoom
+    token = get_token()
+  File "C:\Users\Home\pycharmProjects\kapi\utils\stock_utils.py", line 28, in get_token
+    print("\U0001f50d 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f50d' in position 0: illegal multibyte sequence
+python-dotenv could not parse statement starting at line 12
+python-dotenv could not parse statement starting at line 13
+python-dotenv could not parse statement starting at line 14
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 12
+python-dotenv could not parse statement starting at line 13
+python-dotenv could not parse statement starting at line 14
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+Traceback (most recent call last):
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 183, in <module>
+    update_price_history_from_kiwoom(kosdaq_file_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 174, in update_price_history_from_kiwoom
+    token = get_token()
+  File "C:\Users\Home\pycharmProjects\kapi\utils\stock_utils.py", line 28, in get_token
+    print("\U0001f50d 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f50d' in position 0: illegal multibyte sequence
+python-dotenv could not parse statement starting at line 12
+python-dotenv could not parse statement starting at line 13
+python-dotenv could not parse statement starting at line 14
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 12
+python-dotenv could not parse statement starting at line 13
+python-dotenv could not parse statement starting at line 14
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+Traceback (most recent call last):
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 183, in <module>
+    update_price_history_from_kiwoom(kosdaq_file_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 174, in update_price_history_from_kiwoom
+    token = get_token()
+  File "C:\Users\Home\pycharmProjects\kapi\utils\stock_utils.py", line 28, in get_token
+    print("\U0001f50d 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f50d' in position 0: illegal multibyte sequence
+python-dotenv could not parse statement starting at line 12
+python-dotenv could not parse statement starting at line 13
+python-dotenv could not parse statement starting at line 14
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 12
+python-dotenv could not parse statement starting at line 13
+python-dotenv could not parse statement starting at line 14
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+Traceback (most recent call last):
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 183, in <module>
+    update_price_history_from_kiwoom(kosdaq_file_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 174, in update_price_history_from_kiwoom
+    token = get_token()
+  File "C:\Users\Home\pycharmProjects\kapi\utils\stock_utils.py", line 28, in get_token
+    print("\U0001f50d 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f50d' in position 0: illegal multibyte sequence
+python-dotenv could not parse statement starting at line 12
+python-dotenv could not parse statement starting at line 13
+python-dotenv could not parse statement starting at line 14
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 12
+python-dotenv could not parse statement starting at line 13
+python-dotenv could not parse statement starting at line 14
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+Traceback (most recent call last):
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 183, in <module>
+    update_price_history_from_kiwoom(kosdaq_file_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 174, in update_price_history_from_kiwoom
+    token = get_token()
+  File "C:\Users\Home\pycharmProjects\kapi\utils\stock_utils.py", line 28, in get_token
+    print("\U0001f50d 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f50d' in position 0: illegal multibyte sequence
+python-dotenv could not parse statement starting at line 12
+python-dotenv could not parse statement starting at line 13
+python-dotenv could not parse statement starting at line 14
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 12
+python-dotenv could not parse statement starting at line 13
+python-dotenv could not parse statement starting at line 14
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+Traceback (most recent call last):
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 183, in <module>
+    update_price_history_from_kiwoom(kosdaq_file_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 174, in update_price_history_from_kiwoom
+    token = get_token()
+  File "C:\Users\Home\pycharmProjects\kapi\utils\stock_utils.py", line 28, in get_token
+    print("\U0001f50d 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f50d' in position 0: illegal multibyte sequence
+python-dotenv could not parse statement starting at line 12
+python-dotenv could not parse statement starting at line 13
+python-dotenv could not parse statement starting at line 14
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 12
+python-dotenv could not parse statement starting at line 13
+python-dotenv could not parse statement starting at line 14
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+Traceback (most recent call last):
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 183, in <module>
+    update_price_history_from_kiwoom(kosdaq_file_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 174, in update_price_history_from_kiwoom
+    token = get_token()
+  File "C:\Users\Home\pycharmProjects\kapi\utils\stock_utils.py", line 28, in get_token
+    print("\U0001f50d 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f50d' in position 0: illegal multibyte sequence
+python-dotenv could not parse statement starting at line 12
+python-dotenv could not parse statement starting at line 13
+python-dotenv could not parse statement starting at line 14
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 12
+python-dotenv could not parse statement starting at line 13
+python-dotenv could not parse statement starting at line 14
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+Traceback (most recent call last):
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 183, in <module>
+    update_price_history_from_kiwoom(kosdaq_file_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 174, in update_price_history_from_kiwoom
+    token = get_token()
+  File "C:\Users\Home\pycharmProjects\kapi\utils\stock_utils.py", line 28, in get_token
+    print("\U0001f50d 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f50d' in position 0: illegal multibyte sequence
+python-dotenv could not parse statement starting at line 12
+python-dotenv could not parse statement starting at line 13
+python-dotenv could not parse statement starting at line 14
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 12
+python-dotenv could not parse statement starting at line 13
+python-dotenv could not parse statement starting at line 14
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+Traceback (most recent call last):
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 183, in <module>
+    update_price_history_from_kiwoom(kosdaq_file_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 174, in update_price_history_from_kiwoom
+    token = get_token()
+  File "C:\Users\Home\pycharmProjects\kapi\utils\stock_utils.py", line 28, in get_token
+    print("\U0001f50d 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f50d' in position 0: illegal multibyte sequence
+python-dotenv could not parse statement starting at line 12
+python-dotenv could not parse statement starting at line 13
+python-dotenv could not parse statement starting at line 14
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 12
+python-dotenv could not parse statement starting at line 13
+python-dotenv could not parse statement starting at line 14
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+Traceback (most recent call last):
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 183, in <module>
+    update_price_history_from_kiwoom(kosdaq_file_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 174, in update_price_history_from_kiwoom
+    token = get_token()
+  File "C:\Users\Home\pycharmProjects\kapi\utils\stock_utils.py", line 28, in get_token
+    print("\U0001f50d 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f50d' in position 0: illegal multibyte sequence
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 22
+python-dotenv could not parse statement starting at line 23
+python-dotenv could not parse statement starting at line 24
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 22
+python-dotenv could not parse statement starting at line 23
+python-dotenv could not parse statement starting at line 24
+Traceback (most recent call last):
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 183, in <module>
+    update_price_history_from_kiwoom(kosdaq_file_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 174, in update_price_history_from_kiwoom
+    token = get_token()
+  File "C:\Users\Home\pycharmProjects\kapi\utils\stock_utils.py", line 28, in get_token
+    print("\U0001f50d 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f50d' in position 0: illegal multibyte sequence
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 22
+python-dotenv could not parse statement starting at line 23
+python-dotenv could not parse statement starting at line 24
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 22
+python-dotenv could not parse statement starting at line 23
+python-dotenv could not parse statement starting at line 24
+Traceback (most recent call last):
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 183, in <module>
+    update_price_history_from_kiwoom(kosdaq_file_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 174, in update_price_history_from_kiwoom
+    token = get_token()
+  File "C:\Users\Home\pycharmProjects\kapi\utils\stock_utils.py", line 28, in get_token
+    print("\U0001f50d 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f50d' in position 0: illegal multibyte sequence
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 22
+python-dotenv could not parse statement starting at line 23
+python-dotenv could not parse statement starting at line 24
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 22
+python-dotenv could not parse statement starting at line 23
+python-dotenv could not parse statement starting at line 24
+Traceback (most recent call last):
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 183, in <module>
+    update_price_history_from_kiwoom(kosdaq_file_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 174, in update_price_history_from_kiwoom
+    token = get_token()
+  File "C:\Users\Home\pycharmProjects\kapi\utils\stock_utils.py", line 28, in get_token
+    print("\U0001f50d 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f50d' in position 0: illegal multibyte sequence
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 22
+python-dotenv could not parse statement starting at line 23
+python-dotenv could not parse statement starting at line 24
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 22
+python-dotenv could not parse statement starting at line 23
+python-dotenv could not parse statement starting at line 24
+Traceback (most recent call last):
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 183, in <module>
+    update_price_history_from_kiwoom(kosdaq_file_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 174, in update_price_history_from_kiwoom
+    token = get_token()
+  File "C:\Users\Home\pycharmProjects\kapi\utils\stock_utils.py", line 28, in get_token
+    print("\U0001f50d 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f50d' in position 0: illegal multibyte sequence
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 22
+python-dotenv could not parse statement starting at line 23
+python-dotenv could not parse statement starting at line 24
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 22
+python-dotenv could not parse statement starting at line 23
+python-dotenv could not parse statement starting at line 24
+Traceback (most recent call last):
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 183, in <module>
+    update_price_history_from_kiwoom(kosdaq_file_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 174, in update_price_history_from_kiwoom
+    token = get_token()
+  File "C:\Users\Home\pycharmProjects\kapi\utils\stock_utils.py", line 28, in get_token
+    print("\U0001f50d 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f50d' in position 0: illegal multibyte sequence
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 22
+python-dotenv could not parse statement starting at line 23
+python-dotenv could not parse statement starting at line 24
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 22
+python-dotenv could not parse statement starting at line 23
+python-dotenv could not parse statement starting at line 24
+Traceback (most recent call last):
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 183, in <module>
+    update_price_history_from_kiwoom(kosdaq_file_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 174, in update_price_history_from_kiwoom
+    token = get_token()
+  File "C:\Users\Home\pycharmProjects\kapi\utils\stock_utils.py", line 28, in get_token
+    print("\U0001f50d 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f50d' in position 0: illegal multibyte sequence
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 22
+python-dotenv could not parse statement starting at line 23
+python-dotenv could not parse statement starting at line 24
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 22
+python-dotenv could not parse statement starting at line 23
+python-dotenv could not parse statement starting at line 24
+Traceback (most recent call last):
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 183, in <module>
+    update_price_history_from_kiwoom(kosdaq_file_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 174, in update_price_history_from_kiwoom
+    token = get_token()
+  File "C:\Users\Home\pycharmProjects\kapi\utils\stock_utils.py", line 32, in get_token
+    print("\U0001f50d 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f50d' in position 0: illegal multibyte sequence
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 22
+python-dotenv could not parse statement starting at line 23
+python-dotenv could not parse statement starting at line 24
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 22
+python-dotenv could not parse statement starting at line 23
+python-dotenv could not parse statement starting at line 24
+Traceback (most recent call last):
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 183, in <module>
+    update_price_history_from_kiwoom(kosdaq_file_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 174, in update_price_history_from_kiwoom
+    token = get_token()
+  File "C:\Users\Home\pycharmProjects\kapi\utils\stock_utils.py", line 32, in get_token
+    print("\U0001f50d 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f50d' in position 0: illegal multibyte sequence
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 22
+python-dotenv could not parse statement starting at line 23
+python-dotenv could not parse statement starting at line 24
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 22
+python-dotenv could not parse statement starting at line 23
+python-dotenv could not parse statement starting at line 24
+Traceback (most recent call last):
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 183, in <module>
+    update_price_history_from_kiwoom(kosdaq_file_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 174, in update_price_history_from_kiwoom
+    token = get_token()
+  File "C:\Users\Home\pycharmProjects\kapi\utils\stock_utils.py", line 32, in get_token
+    print("\U0001f50d 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f50d' in position 0: illegal multibyte sequence
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 22
+python-dotenv could not parse statement starting at line 23
+python-dotenv could not parse statement starting at line 24
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 22
+python-dotenv could not parse statement starting at line 23
+python-dotenv could not parse statement starting at line 24
+Traceback (most recent call last):
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 183, in <module>
+    update_price_history_from_kiwoom(kosdaq_file_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 174, in update_price_history_from_kiwoom
+    token = get_token()
+  File "C:\Users\Home\pycharmProjects\kapi\utils\stock_utils.py", line 32, in get_token
+    print("\U0001f50d 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f50d' in position 0: illegal multibyte sequence
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 22
+python-dotenv could not parse statement starting at line 23
+python-dotenv could not parse statement starting at line 24
+python-dotenv could not parse statement starting at line 17
+python-dotenv could not parse statement starting at line 18
+python-dotenv could not parse statement starting at line 19
+python-dotenv could not parse statement starting at line 22
+python-dotenv could not parse statement starting at line 23
+python-dotenv could not parse statement starting at line 24
+Traceback (most recent call last):
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 183, in <module>
+    update_price_history_from_kiwoom(kosdaq_file_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Home\pycharmProjects\kapi\track_market_price.py", line 174, in update_price_history_from_kiwoom
+    token = get_token()
+  File "C:\Users\Home\pycharmProjects\kapi\utils\stock_utils.py", line 32, in get_token
+    print("\U0001f50d 토큰 응답 내용:", r.status_code, r.text)  # 이 줄 추가
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f50d' in position 0: illegal multibyte sequence

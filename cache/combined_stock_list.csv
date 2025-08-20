@@ -15,6 +15,7 @@ ABVC,"ABVC BioPharma, Inc. - Common Stock"
 ABVE,Above Food Ingredients Inc. - Common Stock
 ACAD,ACADIA Pharmaceuticals Inc. - Common Stock
 ACET,"Adicet Bio, Inc. - Common Stock"
+ACFN,"Acorn Energy, Inc. - Common Stock"
 ACGL,Arch Capital Group Ltd. - Common Stock
 ACHC,"Acadia Healthcare Company, Inc. - Common Stock"
 ACIC,American Coastal Insurance Corporation - Common Stock
@@ -103,7 +104,6 @@ ALZN,"Alzamend Neuro, Inc. - Common Stock"
 AMAL,Amalgamated Financial Corp. - Common Stock
 AMAT,"Applied Materials, Inc. - Common Stock"
 AMD,"Advanced Micro Devices, Inc. - Common Stock"
-AMED,Amedisys Inc - Common Stock
 AMGN,Amgen Inc. - Common Stock
 AMIX,"Autonomix Medical, Inc. - Common Stock"
 AMKR,"Amkor Technology, Inc. - Common Stock"
@@ -124,7 +124,6 @@ ANGO,"AngioDynamics, Inc. - Common Stock"
 ANIK,Anika Therapeutics Inc. - Common Stock
 ANIP,"ANI Pharmaceuticals, Inc. - Common Stock"
 ANIX,"Anixa Biosciences, Inc. - Common Stock"
-ANSS,"ANSYS, Inc. - Common Stock"
 ANTX,"AN2 Therapeutics, Inc. - Common Stock"
 AOUT,"American Outdoor Brands, Inc. - Common Stock"
 APA,APA Corporation - Common Stock
@@ -182,7 +181,6 @@ ATLC,Atlanticus Holdings Corporation - Common Stock
 ATLN,Atlantic International Corp. - Common Stock
 ATLO,Ames National Corporation - Common Stock
 ATLX,Atlas Lithium Corporation - Common Stock
-ATNF,180 Life Sciences Corp. - Common Stock
 ATNI,"ATN International, Inc. - Common Stock"
 ATOM,Atomera Incorporated - Common Stock
 ATOS,"Atossa Therapeutics, Inc. - Common Stock"
@@ -199,6 +197,7 @@ AURA,"Aura Biosciences, Inc. - Common Stock"
 AUUD,Auddia Inc. - Common Stock
 AVAH,Aveanna Healthcare Holdings Inc. - Common Stock
 AVAV,"AeroVironment, Inc. - Common Stock"
+AVBH,"Avidbank Holdings, Inc. - Common Stock"
 AVBP,"ArriVent BioPharma, Inc. - Common Stock"
 AVDX,"AvidXchange Holdings, Inc. - Common Stock"
 AVGO,Broadcom Inc. - Common Stock
@@ -225,6 +224,7 @@ BBCP,"Concrete Pumping Holdings, Inc.  - Common Stock"
 BBIO,"BridgeBio Pharma, Inc. - Common Stock"
 BBLG,Bone Biologics Corp - Common Stock
 BBNX,"Beta Bionics, Inc. - Common Stock"
+BBOT,"BridgeBio Oncology Therapeutics, Inc. - Common Stock"
 BBSI,"Barrett Business Services, Inc. - Common Stock"
 BCAB,"BioAtla, Inc. - Common Stock"
 BCAL,California BanCorp - Common Stock
@@ -232,7 +232,6 @@ BCAX,Bicara Therapeutics Inc. - Common Stock
 BCBP,"BCB Bancorp, Inc. (NJ) - Common Stock"
 BCDA,"BioCardia, Inc. - Common Stock"
 BCG,"Binah Capital Group, Inc. - Common Stock"
-BCLI,Brainstorm Cell Therapeutics Inc. - Common Stock
 BCML,BayCom Corp - Common Stock
 BCPC,Balchem Corporation - Common Stock
 BCRX,"BioCryst Pharmaceuticals, Inc. - Common Stock"
@@ -253,6 +252,7 @@ BHRB,Burke & Herbert Financial Services Corp. - Common Stock
 BHST,BioHarvest Sciences Inc. - Common Stock
 BIAF,"bioAffinity Technologies, Inc. - Common Stock"
 BIIB,Biogen Inc. - Common Stock
+BINI,"Bollinger Innovations, Inc. - Common Stock"
 BIOA,"BioAge Labs, Inc. - Common Stock"
 BITF,Bitfarms Ltd. - Common Stock
 BJDX,"Bluejay Diagnostics, Inc. - Common Stock"
@@ -270,11 +270,13 @@ BLKB,"Blackbaud, Inc. - Common Stock"
 BLMN,"Bloomin' Brands, Inc. - Common Stock"
 BLNE,"Beeline Holdings, Inc. - Common Stock"
 BLNK,Blink Charging Co. - Common Stock
+BLZE,"Backblaze, Inc. - Common Stock"
 BMEA,"Biomea Fusion, Inc. - Common Stock"
 BMRA,"Biomerica, Inc. - Common Stock"
 BMRC,Bank of Marin Bancorp - Common Stock
 BMRN,BioMarin Pharmaceutical Inc. - Common Stock
 BNAI,Brand Engagement Network Inc. - Common Stock
+BNC,CEA Industries Inc. - Common Stock
 BNGO,"Bionano Genomics, Inc. - Common Stock"
 BNTC,Benitec Biopharma Inc. - Common Stock
 BOF,BranchOut Food Inc. - Common Stock
@@ -283,7 +285,6 @@ BOLD,"Boundless Bio, Inc. - Common Stock"
 BOLT,"Bolt Biotherapeutics, Inc. - Common Stock"
 BOOM,DMC Global Inc. - Common Stock
 BOTJ,"Bank of the James Financial Group, Inc. - Common Stock"
-BPMC,Blueprint Medicines Corporation - Common Stock
 BPOP,"Popular, Inc. - Common Stock"
 BPRN,"Princeton Bancorp, Inc. - Common Stock"
 BRFH,Barfresh Food Group Inc. - Common Stock
@@ -323,6 +324,7 @@ CAPR,"Capricor Therapeutics, Inc. - Common Stock"
 CAPS,Capstone Holding Corp. - Common Stock
 CAR,"Avis Budget Group, Inc. - Common Stock"
 CARE,"Carter Bankshares, Inc. - Common Stock"
+CARL,"Carlsmed, Inc. - Common Stock"
 CARM,"Carisma Therapeutics, Inc. - Common Stock"
 CART,Maplebear Inc. - Common Stock
 CARV,"Carver Bancorp, Inc. - Common Stock"
@@ -351,7 +353,7 @@ CCSI,"Consensus Cloud Solutions, Inc. - Common Stock"
 CDLX,"Cardlytics, Inc. - Common Stock"
 CDNA,"CareDx, Inc. - Common Stock"
 CDNS,"Cadence Design Systems, Inc. - Common Stock"
-CDT,Conduit Pharmaceuticals Inc.  - Common Stock
+CDT,CDT Equity Inc. - Common Stock
 CDTX,"Cidara Therapeutics, Inc. - Common Stock"
 CDW,CDW Corporation - Common Stock
 CDXS,"Codexis, Inc. - Common Stock"
@@ -385,7 +387,6 @@ CHMG,Chemung Financial Corp  - Common Stock
 CHRD,Chord Energy Corporation - Common Stock
 CHRS,"Coherus Oncology, Inc. - Common Stock"
 CHRW,"C.H. Robinson Worldwide, Inc. - Common Stock"
-CHX,ChampionX Corporation - Common Stock
 CIFR,Cipher Mining Inc. - Common Stock
 CIIT,"Tianci International, Inc. - Common Stock"
 CINF,Cincinnati Financial Corporation - Common Stock
@@ -512,7 +513,6 @@ DAIO,Data I/O Corporation - Common Stock
 DAKT,"Daktronics, Inc. - Common Stock"
 DARE,"Dare Bioscience, Inc. - Common Stock"
 DASH,"DoorDash, Inc. - Common Stock"
-DATS,"DatChat, Inc. - Common Stock"
 DAWN,"Day One Biopharmaceuticals, Inc. - Common Stock"
 DCGO,DocGo Inc. - Common Stock
 DCOM,"Dime Community Bancshares, Inc. - Common Stock"
@@ -616,6 +616,7 @@ ESLA,"Estrella Immunopharma, Inc. - Common Stock"
 ESOA,Energy Services of America Corporation - Common Stock
 ESPR,"Esperion Therapeutics, Inc. - Common Stock"
 ESQ,"Esquire Financial Holdings, Inc. - Common Stock"
+ETHZ,ETHZilla Corporation - Common Stock
 ETNB,"89bio, Inc. - Common Stock"
 ETON,"Eton Pharmaceuticals, Inc. - Common Stock"
 ETSY,"Etsy, Inc. - Common Stock"
@@ -641,7 +642,6 @@ EYPT,"EyePoint Pharmaceuticals, Inc. - Common Stock"
 FA,First Advantage Corporation - Common Stock
 FANG,"Diamondback Energy, Inc. - Common Stock"
 FARM,Farmer Brothers Company - Common Stock
-FARO,"FARO Technologies, Inc. - Common Stock"
 FAST,Fastenal Company - Common Stock
 FAT,FAT Brands Inc. - Common Stock
 FATE,"Fate Therapeutics, Inc. - Common Stock"
@@ -671,7 +671,7 @@ FFIN,"First Financial Bankshares, Inc. - Common Stock"
 FFIV,"F5, Inc. - Common Stock"
 FGBI,"First Guaranty Bancshares, Inc. - Common Stock"
 FGEN,"FibroGen, Inc - Common Stock"
-FGF,Fundamental Global Inc. - Common Stock
+FGNX,Fundamental Global Inc. - Common Stock
 FHB,"First Hawaiian, Inc. - Common Stock"
 FHTX,Foghorn Therapeutics Inc. - Common Stock
 FIBK,"First Interstate BancSystem, Inc. - Common Stock"
@@ -689,6 +689,7 @@ FLL,"Full House Resorts, Inc. - Common Stock"
 FLNT,"Fluent, Inc. - Common Stock"
 FLUX,"Flux Power Holdings, Inc. - Common Stock"
 FLXS,"Flexsteel Industries, Inc. - Common Stock"
+FLY,Firefly Aerospace Inc. - Common Stock
 FLYE,"Fly-E Group, Inc. - Common Stock"
 FMAO,"Farmers & Merchants Bancorp, Inc. - Common Stock"
 FMBH,"First Mid Bancshares, Inc. - Common Stock"
@@ -819,6 +820,7 @@ HGBL,Heritage Global Inc. - Common Stock
 HHS,"Harte Hanks, Inc. - Common Stock"
 HIFS,Hingham Institution for Savings - Common Stock
 HIHO,Highway Holdings Limited - Common Stock
+HIND,"Vyome Holdings, Inc. - Common Stock"
 HLIT,Harmonic Inc. - Common Stock
 HLMN,Hillman Solutions Corp. - Common Stock
 HLVX,"HilleVax, Inc. - Common Stock"
@@ -832,7 +834,6 @@ HOFT,Hooker Furnishings Corporation - Common Stock
 HOLX,"Hologic, Inc. - Common Stock"
 HON,Honeywell International Inc. - Common Stock
 HONE,"HarborOne Bancorp, Inc. - Common Stock"
-HOOK,HOOKIPA Pharma Inc. - Common Stock
 HOPE,"Hope Bancorp, Inc. - Common Stock"
 HOTH,"Hoth Therapeutics, Inc. - Common Stock"
 HOWL,"Werewolf Therapeutics, Inc. - Common Stock"
@@ -851,6 +852,7 @@ HST,"Host Hotels & Resorts, Inc. - Common Stock"
 HSTM,"HealthStream, Inc. - Common Stock"
 HTBK,Heritage Commerce Corp - Common Stock
 HTCR,"Heartcore Enterprises, Inc. - Common Stock"
+HTFL,"Heartflow, Inc. - Common Stock"
 HTLD,"Heartland Express, Inc. - Common Stock"
 HTO,H2O America  - Common Stock
 HTZ,"Hertz Global Holdings, Inc - Common Stock"
@@ -873,7 +875,6 @@ IBCP,Independent Bank Corporation - Common Stock
 IBIO,"iBio, Inc. - Common Stock"
 IBOC,International Bancshares Corporation - Common Stock
 IBRX,"ImmunityBio, Inc. - Common Stock"
-ICAD,icad inc. - Common Stock
 ICCC,ImmuCell Corporation - Common Stock
 ICFI,"ICF International, Inc. - Common Stock"
 ICMB,"Investcorp Credit Management BDC, Inc. - Common Stock"
@@ -885,13 +886,12 @@ IDXX,"IDEXX Laboratories, Inc. - Common Stock"
 IDYA,"IDEAYA Biosciences, Inc. - Common Stock"
 IESC,"IES Holdings, Inc. - Common Stock"
 IFRX,InflaRx N.V. - Common Stock
-IGMS,"IGM Biosciences, Inc. - Common Stock"
 III,"Information Services Group, Inc. - Common Stock"
 IIIV,"i3 Verticals, Inc. - Common Stock"
-IKNA,"Ikena Oncology, Inc. - Common Stock"
 IKT,"Inhibikase Therapeutics, Inc. - Common Stock"
 ILLR,Triller Group Inc. - Common Stock
 ILMN,"Illumina, Inc. - Common Stock"
+IMA,"ImageneBio, Inc. - Common Stock"
 IMDX,Insight Molecular Diagnostics Inc. - Common Stock
 IMG,CIMG Inc. - Common Stock
 IMMR,Immersion Corporation - Common Stock
@@ -992,7 +992,6 @@ KG,"Kestrel Group, Ltd. - Common Stock"
 KHC,The Kraft Heinz Company - Common Stock
 KIDS,OrthoPediatrics Corp. - Common Stock
 KINS,"Kingstone Companies, Inc - Common Stock"
-KIRK,"Kirkland's, Inc. - Common Stock"
 KLAC,KLA Corporation  - Common Stock
 KLIC,"Kulicke and Soffa Industries, Inc. - Common Stock"
 KLRS,"Kalaris Therapeutics, Inc.  - Common Stock"
@@ -1195,7 +1194,6 @@ MTSI,"MACOM Technology Solutions Holdings, Inc. - Common Stock"
 MTSR,"Metsera, Inc. - Common Stock"
 MTVA,MetaVia Inc.  - Common Stock
 MU,"Micron Technology, Inc. - Common Stock"
-MULN,"Mullen Automotive, Inc. - Common Stock"
 MVBF,MVB Financial Corp. - Common Stock
 MVIS,"MicroVision, Inc. - Common Stock"
 MVST,"Microvast Holdings, Inc. - Common Stock"
@@ -1204,6 +1202,7 @@ MXL,"MaxLinear, Inc - Common Stock"
 MYFW,"First Western Financial, Inc. - Common Stock"
 MYGN,"Myriad Genetics, Inc. - Common Stock"
 MYRG,"MYR Group, Inc. - Common Stock"
+MYSE,"Myseum, Inc. - Common Stock"
 MYSZ,"My Size, Inc. - Common Stock"
 MZTI,The Marzetti Company - Common Stock
 NAGE,"Niagen Bioscience, Inc. - Common Stock"
@@ -1228,7 +1227,6 @@ NDLS,Noodles & Company - Common Stock
 NDRA,ENDRA Life Sciences Inc. - Common Stock
 NDSN,Nordson Corporation - Common Stock
 NECB,"NorthEast Community Bancorp, Inc. - Common Stock"
-NEHC,New Era Helium Inc - Common Stock
 NEO,"NeoGenomics, Inc. - Common Stock"
 NEOG,Neogen Corporation - Common Stock
 NEON,Neonode Inc. - Common Stock
@@ -1275,13 +1273,14 @@ NTRB,Nutriband Inc. - Common Stock
 NTRP,"NextTrip, Inc. - Common Stock"
 NTRS,Northern Trust Corporation - Common Stock
 NTWK,NETSOL Technologies Inc. - Common Stock
+NUAI,"New Era Energy & Digital, Inc. - Common Stock"
+NUTR,Nusatrip Incorporated - Common Stock
 NUTX,Nutex Health Inc. - Common Stock
 NUWE,"Nuwellis, Inc. - Common Stock"
 NVAX,"Novavax, Inc. - Common Stock"
 NVCT,"Nuvectis Pharma, Inc. - Common Stock"
 NVDA,NVIDIA Corporation - Common Stock
 NVEC,NVE Corporation - Common Stock
-NVEE,"NV5 Global, Inc. - Common Stock"
 NVFY,"Nova Lifestyle, Inc - Common Stock"
 NVNO,enVVeno Medical Corporation - Common Stock
 NVTS,Navitas Semiconductor Corporation - Common Stock
@@ -1350,7 +1349,6 @@ OSRH,"OSR Holdings, Inc. - Common Stock"
 OSS,"One Stop Systems, Inc. - Common Stock"
 OSUR,"OraSure Technologies, Inc. - Common Stock"
 OTLK,"Outlook Therapeutics, Inc. - Common Stock"
-OTRK,"Ontrak, Inc. - Common Stock"
 OTTR,Otter Tail Corporation - Common Stock
 OUST,"Ouster, Inc. - Common Stock"
 OVBC,Ohio Valley Banc Corp. - Common Stock
@@ -1395,7 +1393,6 @@ PENN,"PENN Entertainment, Inc. - Common Stock"
 PEP,"PepsiCo, Inc. - Common Stock"
 PEPG,PepGen Inc. - Common Stock
 PESI,"Perma-Fix Environmental Services, Inc. - Common Stock"
-PET,Wag! Group Co. - Common Stock
 PETS,"PetMed Express, Inc. - Common Stock"
 PFBC,Preferred Bank - Common Stock
 PFG,Principal Financial Group Inc - Common Stock
@@ -1443,6 +1440,7 @@ POWL,"Powell Industries, Inc. - Common Stock"
 POWW,Outdoor Holding Company - Common Stock
 PPBI,Pacific Premier Bancorp Inc - Common Stock
 PPC,Pilgrim's Pride Corporation - Common Stock
+PPCB,"Propanc Biopharma, Inc. - Common Stock"
 PPIH,"Perma-Pipe International Holdings, Inc. - Common Stock"
 PPSI,"Pioneer Power Solutions, Inc. - Common Stock"
 PRAA,"PRA Group, Inc. - Common Stock"
@@ -1476,7 +1474,6 @@ PTON,"Peloton Interactive, Inc. - Common Stock"
 PULM,"Pulmatrix, Inc. - Common Stock"
 PVBC,"Provident Bancorp, Inc. - Common Stock"
 PVLA,"Palvella Therapeutics, Inc. - Common Stock"
-PWOD,"Penns Woods Bancorp, Inc. - Common Stock"
 PXLW,"Pixelworks, Inc. - Common Stock"
 PXS,Pyxis Tankers Inc. - Common Stock
 PYPL,"PayPal Holdings, Inc. - Common Stock"
@@ -1562,9 +1559,9 @@ ROST,"Ross Stores, Inc. - Common Stock"
 RPD,"Rapid7, Inc. - Common Stock"
 RRBI,"Red River Bancshares, Inc. - Common Stock"
 RRGB,"Red Robin Gourmet Burgers, Inc. - Common Stock"
-RSLS,"ReShape Lifesciences, Inc. - Common Stock"
 RSSS,"Research Solutions, Inc - Common Stock"
 RSVR,"Reservoir Media, Inc.. - Common Stock"
+RUBI,Rubico Inc. - Common Stock
 RUN,Sunrun Inc. - Common Stock
 RVMD,"Revolution Medicines, Inc. - Common Stock"
 RVPH,"Reviva Pharmaceuticals Holdings, Inc. - Common Stock"
@@ -1577,14 +1574,12 @@ RYTM,"Rhythm Pharmaceuticals, Inc. - Common Stock"
 SABR,Sabre Corporation - Common Stock
 SABS,"SAB Biotherapeutics, Inc. - Common Stock"
 SAFT,"Safety Insurance Group, Inc. - Common Stock"
-SAGE,"Sage Therapeutics, Inc. - Common Stock"
 SAIA,"Saia, Inc. - Common Stock"
 SAIC,Science Applications International Corporation - Common Stock
 SAIL,"SailPoint, Inc. - Common Stock"
 SAMG,Silvercrest Asset Management Group Inc. - Common Stock
 SANA,"Sana Biotechnology, Inc. - Common Stock"
 SANM,Sanmina Corporation - Common Stock
-SANW,S&W Seed Company - Common Stock
 SAVA,"Cassava Sciences, Inc. - Common Stock"
 SBC,SBC Medical Group Holdings Incorporated - Common Stock
 SBCF,Seacoast Banking Corporation of Florida - Common Stock
@@ -1622,7 +1617,6 @@ SGC,"Superior Group of Companies, Inc. - Common Stock"
 SGD,Safe and Green Development Corporation - Common Stock
 SGHT,"Sight Sciences, Inc. - Common Stock"
 SGLY,Singularity Future Technology Ltd. - Common Stock
-SGMA,"SigmaTron International, Inc. - Common Stock"
 SGMO,"Sangamo Therapeutics, Inc. - Common Stock"
 SGRP,"SPAR Group, Inc. - Common Stock"
 SGRY,"Surgery Partners, Inc. - Common Stock"
@@ -1706,7 +1700,6 @@ SPWH,"Sportsman's Warehouse Holdings, Inc. - Common Stock"
 SPWR,"Complete Solaria, Inc. - Common Stock"
 SRCE,1st Source Corporation - Common Stock
 SRDX,"Surmodics, Inc. - Common Stock"
-SRM,"SRM Entertainment, Inc. - Common Stock"
 SRPT,"Sarepta Therapeutics, Inc. - Common Stock"
 SRRK,Scholar Rock Holding Corporation - Common Stock
 SRTS,"Sensus Healthcare, Inc. - Common Stock"
@@ -1728,7 +1721,6 @@ STLD,"Steel Dynamics, Inc. - Common Stock"
 STOK,"Stoke Therapeutics, Inc. - Common Stock"
 STRA,"Strategic Education, Inc. - Common Stock"
 STRL,"Sterling Infrastructure, Inc. - Common Stock"
-STRM,"Streamline Health Solutions, Inc. - Common Stock"
 STRO,"Sutro Biopharma, Inc. - Common Stock"
 STRR,"Star Equity Holdings, Inc. - Common Stock"
 STRS,Stratus Properties Inc. - Common Stock
@@ -1739,7 +1731,7 @@ SUNE,"SUNation Energy, Inc. - Common Stock"
 SUNS,"Sunrise Realty Trust, Inc. - Common Stock"
 SUPN,"Supernus Pharmaceuticals, Inc. - Common Stock"
 SURG,"SurgePays, Inc. - Common Stock"
-SUUN,SolarBank Corporation - Common Stock
+SUUN,PowerBank Corporation - Common Stock
 SVCO,"Silvaco Group, Inc. - Common Stock"
 SVRA,"Savara, Inc. - Common Stock"
 SWAG,"Stran & Company, Inc. - Common Stock"
@@ -1763,6 +1755,7 @@ TAYD,"Taylor Devices, Inc. - Common Stock"
 TBBK,"The Bancorp, Inc. - Common Stock"
 TBCH,Turtle Beach Corporation - Common Stock
 TBH,"Brag House Holdings, Inc. - Common Stock"
+TBHC,"The Brand House Collective, Inc - Common Stock"
 TBRG,"TruBridge, Inc. - Common Stock"
 TCBI,"Texas Capital Bancshares, Inc. - Common Stock"
 TCBK,TriCo Bancshares - Common Stock
@@ -1787,7 +1780,6 @@ TGTX,"TG Therapeutics, Inc. - Common Stock"
 TH,Target Hospitality Corp. - Common Stock
 THAR,"Tharimmune, Inc. - Common Stock"
 THFF,First Financial Corporation  - Common Stock
-THRD,"Third Harmonic Bio, Inc. - Common Stock"
 THRM,Gentherm Inc - Common Stock
 THRY,"Thryv Holdings, Inc. - Common Stock"
 TIGO,Millicom International Cellular S.A. - Common Stock
@@ -1826,6 +1818,7 @@ TRMK,Trustmark Corporation - Common Stock
 TRML,"Tourmaline Bio, Inc.  - Common Stock"
 TRNR,Interactive Strength Inc. - Common Stock
 TRNS,"Transcat, Inc. - Common Stock"
+TRON,Tron Inc. - Common Stock
 TROW,"T. Rowe Price Group, Inc. - Common Stock"
 TRS,TriMas Corporation - Common Stock
 TRST,TrustCo Bank Corp NY - Common Stock
@@ -1833,7 +1826,6 @@ TRUE,"TrueCar, Inc. - Common Stock"
 TRUP,"Trupanion, Inc. - Common Stock"
 TRVI,"Trevi Therapeutics, Inc. - Common Stock"
 TSBK,"Timberland Bancorp, Inc. - Common Stock"
-TSBX,Turnstone Biologics Corp. - Common Stock
 TSCO,Tractor Supply Company - Common Stock
 TSHA,"Taysha Gene Therapies, Inc. - Common Stock"
 TSLA,"Tesla, Inc.  - Common Stock"
@@ -1901,7 +1893,6 @@ UVSP,Univest Financial Corporation - Common Stock
 VABK,Virginia National Bankshares Corporation - Common Stock
 VALU,"Value Line, Inc. - Common Stock"
 VANI,"Vivani Medical, Inc.  - Common Stock"
-VAPE,CEA Industries Inc. - Common Stock
 VBIX,Viewbix Inc. - Common Stock 
 VBTX,"Veritex Holdings, Inc. - Common Stock"
 VC,Visteon Corporation - Common Stock
@@ -1915,10 +1906,8 @@ VERB,"Verb Technology Company, Inc. - Common Stock"
 VERI,"Veritone, Inc. - Common Stock"
 VERO,Venus Concept Inc.  - Common Stock
 VERU,Veru Inc. - Common Stock
-VERV,"Verve Therapeutics, Inc. - Common Stock"
 VIAV,Viavi Solutions Inc. - Common Stock
 VICR,Vicor Corporation - Common Stock
-VIGL,"Vigil Neuroscience, Inc. - Common Stock"
 VIR,"Vir Biotechnology, Inc. - Common Stock"
 VIRC,Virco Manufacturing Corporation - Common Stock
 VITL,"Vital Farms, Inc. - Common Stock"
@@ -1998,7 +1987,7 @@ XAGE,"Longevity Health Holdings, Inc. - Common Stock"
 XAIR,"Beyond Air, Inc. - Common Stock"
 XBIO,"Xenetic Biosciences, Inc. - Common Stock"
 XBIT,XBiotech Inc. - Common Stock
-XBP,"XBP Europe Holdings, Inc. - Common Stock"
+XBP,"XBP Global Holdings, Inc. - Common Stock"
 XCUR,"Exicure, Inc. - Common Stock"
 XEL,Xcel Energy Inc. - Common Stock
 XELB,"Xcel Brands, Inc - Common Stock"
@@ -2032,6 +2021,5 @@ ZION,Zions Bancorporation N.A. - Common Stock
 ZS,"Zscaler, Inc. - Common Stock"
 ZUMZ,Zumiez Inc. - Common Stock
 ZVRA,"Zevra Therapeutics, Inc.  - Common Stock"
-ZVSA,"ZyVersa Therapeutics, Inc. - Common Stock"
 ZYME,Zymeworks Inc. - Common Stock
 ZYXI,"Zynex, Inc. - Common Stock"

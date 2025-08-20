@@ -28,13 +28,13 @@ SEARCH_CONFIG = {
     },
     '52w': {
         'label': '📊 52주 신고가 검색 중...',
-        'function': lambda: run_new_high_scan(),
-        'formatter': format_new_high_message
+        'function': lambda: run_new_high_scan(date="250"),
+        "formatter": lambda df: format_new_high_message(df, date="52"),
     },
     '30w': {
         'label': '📊 30주 신고가 검색 중...',
         'function': lambda: run_new_high_scan(date="150"),
-        'formatter': format_new_high_message
+        "formatter": lambda df: format_new_high_message(df, date="30"),
     },
     # 🇺🇸 미국 종목
     'us-rsi': {
@@ -50,12 +50,12 @@ SEARCH_CONFIG = {
     'us-52w': {
         'label': '🇺🇸📊 미국 52주 신고가 검색 중...',
         'function': lambda: us_new_high_scan(),
-        'formatter': format_us_high
+        'formatter': lambda df: format_us_high(df , date = "52")
     },
     'us-30w': {
-        'label': '📊 30주 신고가 검색 중...',
+        'label': '📊 미국 30주 신고가 검색 중...',
         'function': lambda: us_new_high_scan(date=150),
-        'formatter': format_us_high
+        'formatter': lambda df: format_us_high(df , date = "30")
     },
 }
 
@@ -176,8 +176,6 @@ async def perform_search(query, user_id: int, search_type: str):
 
         # 메시지 분할 전송
         await send_long_message(query, message)
-
-        # await query.message.reply_text(message)
 
     except Exception as e:
         logger.error(f"❌ 검색 중 오류: {e}")

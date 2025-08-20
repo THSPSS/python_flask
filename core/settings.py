@@ -7,9 +7,13 @@ EXCLUDE_KEYWORDS = [
 
 WEEKDAY_MAP = ['월', '화', '수', '목', '금', '토', '일']
 RESEARCHES = [
-    'rsi', 'long-lower-shadow','52weeks' ,
+    'rsi',
+    'long-lower-shadow',
+    '30weeks',
+    '52weeks' ,
     "us-rsi",
     "us-long-lower-shadow",
+    'us-30weeks',
     "us-52weeks"
 ]
 

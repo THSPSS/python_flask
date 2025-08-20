@@ -2,10 +2,7 @@ import os
 
 import pandas as pd
 from functools import lru_cache
-import requests
-from io import StringIO
 from datetime import datetime
-from pathlib import Path
 
 from utils.stock_utils import us_is_stock_today, us_is_valid_symbol, us_is_common_stock
 
